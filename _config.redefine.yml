@@ -346,7 +346,7 @@ comment:
   # Whether to enable comment
   enable: true
   # Comment system
-  system: twikoo # waline, gitalk, twikoo, giscus
+  system: giscus # waline, gitalk, twikoo, giscus
   # System configuration
   config:
     # Waline comment system. See https://waline.js.org/
@@ -367,14 +367,14 @@ comment:
     # Twikoo comment system. See https://twikoo.js.org/
     twikoo:
       version: 1.6.10 # Twikoo version, do not modify if you dont know what it is
-      server_url: https://comment-1595b4kj7-yuchen-starfalls-projects-22001730.vercel.app/# Twikoo server URL. e.g. https://example.example.com
+      server_url: https://comment-system-hj0p1vnqk-yuchen-starfalls-projects-22001730.vercel.app/
       region: # Twikoo region. can be empty
     # Giscus comment system. See https://giscus.app/
     giscus:
-      repo: # Github repository name e.g. EvanNotFound/hexo-theme-redefine
-      repo_id: # Github repository id
-      category: # Github discussion category
-      category_id: # Github discussion category id
+      repo: Yuchen-starfall/Yuchen-starfall.github.io # Github repository name e.g. EvanNotFound/hexo-theme-redefine
+      repo_id: R_kgDONY6r-Q # Github repository id
+      category: Announcements# Github discussion category
+      category_id: DIC_kwDONY6r-c4Ck8Zm # Github discussion category id
       mapping: pathname # Which value to use as the unique identifier for the page. e.g. pathname, url, title, og:title. DO NOT USE og:title WITH PJAX ENABLED since pjax will not update og:title when the page changes
       strict: 0 # Whether to enable strict mode. e.g. 0, 1
       reactions_enabled: 1 # Whether to enable reactions. e.g. 0, 1
