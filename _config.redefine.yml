@@ -344,15 +344,15 @@ articles:
 # Docs: https://redefine-docs.ohevan.com/posts/comment
 comment:
   # Whether to enable comment
-  enable: truee
+  enable: true
   # Comment system
-  system: gitalk # waline, gitalk, twikoo, giscus
+  system: twikoo # waline, gitalk, twikoo, giscus
   # System configuration
   config:
     # Waline comment system. See https://waline.js.org/
     waline:
-      serverUrl: https://example.example.com # Waline server URL. e.g. https://example.example.com
-      lang: zh-CN # Waline language. e.g. zh-CN, en-US. See https://waline.js.org/guide/client/i18n.html
+      serverUrl:  # Waline server URL. e.g. https://example.example.com
+      lang:  # Waline language. e.g. zh-CN, en-US. See https://waline.js.org/guide/client/i18n.html
       emoji: [] # Waline emojis, see https://waline.js.org/guide/features/emoji.html
       recaptchaV3Key: # Google reCAPTCHA v3 key. See https://waline.js.org/reference/client/props.html#recaptchav3key
       turnstileKey: # Turnstile key. See https://waline.js.org/reference/client/props.html#turnstilekey
@@ -361,13 +361,13 @@ comment:
     gitalk:
       clientID: Ov23lidEPLLr2VLzpOWm # GitHub Application Client ID
       clientSecret: a2e4b214304ffadb6612761a820ccad077a7e7a0 # GitHub Application Client Secret
-      repo:  Yuchen-starfall.github.io # GitHub repository
-      owner: storage-comment # GitHub repository owner
-      proxy: Yuchen-starfall # GitHub repository proxy
+      repo:  storage-comment # GitHub repository
+      owner: Yuchen-starfall # GitHub repository owner
+    
     # Twikoo comment system. See https://twikoo.js.org/
     twikoo:
       version: 1.6.10 # Twikoo version, do not modify if you dont know what it is
-      server_url: # Twikoo server URL. e.g. https://example.example.com
+      server_url: https://comment-1595b4kj7-yuchen-starfalls-projects-22001730.vercel.app/# Twikoo server URL. e.g. https://example.example.com
       region: # Twikoo region. can be empty
     # Giscus comment system. See https://giscus.app/
     giscus:
