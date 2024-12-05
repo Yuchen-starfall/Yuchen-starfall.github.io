@@ -344,7 +344,7 @@ articles:
 # Docs: https://redefine-docs.ohevan.com/posts/comment
 comment:
   # Whether to enable comment
-  enable: ture
+  enable: truee
   # Comment system
   system: gitalk # waline, gitalk, twikoo, giscus
   # System configuration
@@ -361,7 +361,7 @@ comment:
     gitalk:
       clientID: Ov23lidEPLLr2VLzpOWm # GitHub Application Client ID
       clientSecret: a2e4b214304ffadb6612761a820ccad077a7e7a0 # GitHub Application Client Secret
-      repo: gitalk # GitHub repository
+      repo:  Yuchen-starfall.github.io # GitHub repository
       owner: storage-comment # GitHub repository owner
       proxy: Yuchen-starfall # GitHub repository proxy
     # Twikoo comment system. See https://twikoo.js.org/
