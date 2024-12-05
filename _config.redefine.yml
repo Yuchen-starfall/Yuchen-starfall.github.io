@@ -11,13 +11,13 @@
 # Docs: https://redefine-docs.ohevan.com/basic/info
 info:
   # Site title
-  title: Theme Redefine
+  title: Steps Among the Stars
   # Site subtitle
-  subtitle: Redefine Your Hexo Journey.
+  subtitle: Documenting my graduate journey—each step tells a story of growth and ambition
   # Author name
-  author: The Redefine Team
+  author: Yuchen
   # Site URL
-  url: https://redefine.ohevan.com
+  url: https://yuchen-starfall.github.io
 # BASIC INFORMATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -25,11 +25,11 @@ info:
 # Docs: https://redefine-docs.ohevan.com/basic/defaults
 defaults:
   # Favicon
-  favicon: /images/redefine-favicon.svg
+  favicon: /images/profile.jpg
   # Site logo
   logo: 
   # Site avatar
-  avatar: /images/redefine-avatar.svg
+  avatar: /images/profile.jpg
 # IMAGE CONFIGURATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -76,7 +76,7 @@ global:
   # Scroll progress
   scroll_progress:
     bar: false # progress bar
-    percentage: true # percentage
+    percentage: false # percentage
   # Website counter
   website_counter:
     url: https://cn.vercount.one/js # counter API URL (no need to change)
@@ -88,8 +88,8 @@ global:
   single_page: true
   # Whether to enable Preloader.
   preloader:
-    enable: false
-    custom_message: # Custom message. If empty, the site title will be displayed
+    enable: ture
+    custom_message: Welcome to my little corner of chaos and brilliance! # Custom message. If empty, the site title will be displayed
   # Whether to enable open graph
   open_graph:
     enable: true
@@ -110,7 +110,7 @@ fontawesome: # Pro v6.2.1
   # Light version
   light: false
   # Duotone version
-  duotone: false
+  duotone: ture
   # Sharp Solid version
   sharp_solid: false
 # FONTAWESOME <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
@@ -131,9 +131,9 @@ home_banner:
   title: Theme Redefine
   # Home banner subtitle
   subtitle:
-    text: [] # subtitle text, array
+    text: ["Welcome to my little corner of chaos and brilliance!"] # subtitle text, array
     hitokoto:  # 一言配置
-      enable: false # Whether to enable hitokoto
+      enable: ture # Whether to enable hitokoto
       show_author: false # Whether to show author
       api: https://v1.hitokoto.cn # API URL, can add types, see https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0
     typing_speed: 100 # Typing speed (ms)
