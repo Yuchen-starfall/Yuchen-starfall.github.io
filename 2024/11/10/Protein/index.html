@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2024-11-10T07:00:00.000Z">
-<meta property="article:modified_time" content="2024-12-10T07:00:26.182Z">
+<meta property="article:modified_time" content="2024-12-10T14:23:37.047Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="course">
 <meta property="article:tag" content="Protein">
@@ -415,8 +415,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-12-10 15:26</span>
-            <span class="mobile">2024-12-10 15:26</span>
+            <span class="desktop">2024-12-10 22:23:37</span>
+            <span class="mobile">2024-12-10 22:23:37</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -458,12 +458,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>13 Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>579 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>1 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>2 Mins</span>
         </span>
     
     
@@ -483,9 +483,118 @@
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
 			<h2 id="Foundation"><a href="#Foundation" class="headerlink" title="Foundation"></a>Foundation</h2><h3 id="Protein-purification"><a href="#Protein-purification" class="headerlink" title="Protein purification"></a>Protein purification</h3><p>Isolating a specific protein from a cell for further study</p>
-<ol>
-<li>Protein separation</li>
+<p>Protein separation</p>
+<ul>
+<li>Different solubility – 盐析（salting out）</li>
+<li>Different size <ul>
+<li>Centrifugation（Density Gradient Centrifugation）</li>
+<li>Dialysis（透析）</li>
+<li>Size Exclusion (gel-filtration) chromatography（色谱）</li>
+<li>Native PAGE</li>
+</ul>
+</li>
+<li>Different charges<ul>
+<li>Ion-exchange chromatography</li>
+<li>Two-dimensional electrophoresis</li>
+</ul>
+</li>
+<li>Different ligandbinding<ul>
+<li>Affinity chromatography（Hi-His、Flag-MAb、GST-Glu、生物素-链霉）</li>
+</ul>
+</li>
+<li>Difference surface features<ul>
+<li>Hydrophobic chromatography</li>
+</ul>
+</li>
+</ul>
+<p><strong>Goal: To set minimum objectives for purity and quantity, maintenance of</strong> biological activity and economy in terms of money and time. <strong>KEEP IT SIMPLE！</strong></p>
+<p><strong>Develop analytical assays</strong> for fast detection of protein activity&#x2F;recovery and critical contaminants.</p>
+<h3 id="Protein-mediated-interactions"><a href="#Protein-mediated-interactions" class="headerlink" title="Protein-mediated interactions"></a>Protein-mediated interactions</h3><ul>
+<li>Yeast two hybrid<ul>
+<li>DNA-binding domain + transcriptional activation domain (BAIT, captured prey)</li>
+<li>Transcription of reporter gene</li>
+</ul>
+</li>
+<li>Bimolecular fluorescence complementation (BiFC)<ul>
+<li>Two non-fluorescent fragments (YN and YC) of the yellow fluorescent protein (YFP) are fused to putative interaction partners (A and B)</li>
+</ul>
+</li>
+<li>APEX<ul>
+<li>生物素标记互做蛋白</li>
+<li>POL-Peroxidase（过氧化物酶） + Biotin-phenol（生物素偶联苯酚）+ 过氧化物酶 –&gt; 离POL近的蛋白标记上生物素</li>
+</ul>
+</li>
+<li>Fluorescence resonance energy transfer (FRET)<ul>
+<li>A荧光蛋白的激发光频率在B荧光蛋白入射光频率内</li>
+</ul>
+</li>
+<li>Size-exclusion Chromatography(SEC)<ul>
+<li>互做蛋白的大小改变。洗脱时间提前</li>
+</ul>
+</li>
+<li>Light scattering（散射）<ul>
+<li>Multi-angle static light scattering(MALS)</li>
+<li>Dynamic light scattering (DLS)</li>
+</ul>
+</li>
+<li>Mass photometry</li>
+<li>Pull down and Co-IP<ul>
+<li>Pull-down通过将融合标签的蛋白固定在载体上以捕获其结合的相互作用蛋白；Co-IP则利用特异性抗体从细胞裂解液中富集目标蛋白及其复合物中的结合蛋白</li>
+</ul>
+</li>
+<li>Far-western blot<ul>
+<li>一抗二抗</li>
+</ul>
+</li>
+<li>Electrophoreticmobility shift assay(EMSA)、</li>
+<li>Isothermal Titration Calorimetry (ITC)</li>
+<li>Surface Plasmon Resonance (SPR)</li>
+</ul>
+<h3 id="Protein-engineering"><a href="#Protein-engineering" class="headerlink" title="Protein engineering"></a>Protein engineering</h3><ol>
+<li><p>Directed evolution – 多色荧光蛋白</p>
+<ul>
+<li><strong>Mimic natural evolution.</strong> No structural or mechanistic information required. Large library size and high throughput selection &#x2F;screening techniques needed</li>
+<li>Random mutation（error prone PCR、nucleoside analogs）</li>
+<li>Recomination（DNA shuffling）</li>
+<li>Phage display（噬菌体展示）<ul>
+<li>Make a combinatorial library of genes of interest</li>
+<li>Put genes into a vector so that each gene product is expressed on the surface of a bacteriophage</li>
+<li>Take collection of phage and select those with desired properties (e.g., binding to something)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Rational design</p>
+<ul>
+<li>Require structural and mechanistic information</li>
+<li>Computer design –&gt; Site–directed mutagenesis –&gt; Biochemical assays to check the stability and activity</li>
+</ul>
+</li>
+<li><p>De novo design</p>
+<ul>
+<li>Computational design from scratch</li>
+<li>The design of a functional binder (magenta) to a target protein (grey)</li>
+</ul>
+</li>
 </ol>
+<p>从有到优：Directed evolution、Rational design</p>
+<p>从无到有：De novo design</p>
+<h3 id="Structural-biology"><a href="#Structural-biology" class="headerlink" title="Structural biology"></a>Structural biology</h3><ul>
+<li><p>X-ray based structural methods (crystallography（晶体学）, coherent imaging（相干衍射）, scattering（小角衍射）)</p>
+</li>
+<li><p>CryoElectron Microscopy (Cryo-EM)</p>
+<ul>
+<li>Single particle analysis</li>
+</ul>
+</li>
+<li><p>Nuclear magnetic resonance (NMR)</p>
+<ul>
+<li>核磁共振，是指核<strong>磁矩不为零的原子核</strong>，在外磁场的作用下，核自旋能级发生塞曼分裂（Zeeman Splitting），共振吸收某一特定频率的射频辐射的物理过程。</li>
+</ul>
+</li>
+<li><p>Structural prediction</p>
+</li>
+</ul>
 
 		</div>
 
@@ -500,7 +609,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-12-10 15:00:26
+                    :</strong> 2024-12-10 22:23:37
             </li>
         
         <li>
@@ -621,7 +730,7 @@
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
 		<div class="page-title">Methods in Protein Chemistry</div>
-		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Foundation"><span class="nav-text">Foundation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Protein-purification"><span class="nav-text">Protein purification</span></a></li></ol></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Foundation"><span class="nav-text">Foundation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Protein-purification"><span class="nav-text">Protein purification</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Protein-mediated-interactions"><span class="nav-text">Protein-mediated interactions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Protein-engineering"><span class="nav-text">Protein engineering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Structural-biology"><span class="nav-text">Structural biology</span></a></li></ol></li></ol>
 
 	</div>
 </div>
@@ -652,7 +761,7 @@
                     </span>
                     
                         <span>
-                            3.2k words in total
+                            3.8k words in total
                         </span>
                     
                 </p>
