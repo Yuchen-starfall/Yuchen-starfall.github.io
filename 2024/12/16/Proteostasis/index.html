@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2024-12-16T06:18:00.000Z">
-<meta property="article:modified_time" content="2024-12-16T06:34:15.267Z">
+<meta property="article:modified_time" content="2024-12-16T14:39:22.168Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="course">
 <meta property="article:tag" content="Protein">
@@ -417,8 +417,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-12-16 14:34:15</span>
-            <span class="mobile">2024-12-16 14:34:15</span>
+            <span class="desktop">2024-12-16 22:39:22</span>
+            <span class="mobile">2024-12-16 22:39:22</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -468,12 +468,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>54 Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>682 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>1 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>2 Mins</span>
         </span>
     
     
@@ -504,7 +504,50 @@
 <li><p>Very dynamic：ubiquitylation vs de-ubiquitination</p>
 </li>
 </ul>
-<h3 id="Ubiquitin-proteasome-system-UPS"><a href="#Ubiquitin-proteasome-system-UPS" class="headerlink" title="Ubiquitin-proteasome system (UPS)"></a>Ubiquitin-proteasome system (UPS)</h3><h3 id="Ubiquitin-Signaling"><a href="#Ubiquitin-Signaling" class="headerlink" title="Ubiquitin Signaling"></a>Ubiquitin Signaling</h3>
+<h3 id="Ubiquitin-proteasome-system-UPS"><a href="#Ubiquitin-proteasome-system-UPS" class="headerlink" title="Ubiquitin-proteasome system (UPS)"></a>Ubiquitin-proteasome system (UPS)</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/img-Proteostasis/1.png"
+                      alt="ups"
+                ></p>
+<ul>
+<li>E1酶（泛素活化酶，Ubiquitin-activating enzyme）</li>
+<li>E1酶通过消耗ATP，将泛素分子的C末端（Gly76）的羧基与自身的半胱氨酸（Cys）残基形成硫酯键。</li>
+<li>激活的泛素随后被转移到E2酶上。</li>
+<li>E2酶（泛素结合酶，Ubiquitin-conjugating enzyme）</li>
+<li>将泛素从E1转移到自身的活性位点（半胱氨酸上），然后进一步转移到目标蛋白（在E3酶的辅助下）。</li>
+<li>E3酶（泛素连接酶，Ubiquitin ligase）</li>
+<li>决定泛素化的特异性，通过识别目标蛋白，并协助E2酶将泛素连接到目标蛋白的赖氨酸残基上。</li>
+</ul>
+<h3 id="Ubiquitin-Signaling"><a href="#Ubiquitin-Signaling" class="headerlink" title="Ubiquitin Signaling"></a>Ubiquitin Signaling</h3><p>Ubiquitin Codes</p>
+<ul>
+<li><p>coding by specific</p>
+<ul>
+<li>E3连接酶有两种方式添加泛素蛋白：<ul>
+<li>“Hug”模式：E3上面既结合了E2也结合了底物，E2泛素结合酶直接把泛素加到底物上面。E3没有直接接触到Ub，只是在中间起到了一个空间骨架的作用，拉近了E2 和底物之间的距离</li>
+<li>“Kiss”模式：E3 上面既结合了E2 也结合了底物，E2把泛素传递给 E3上的特殊位点，经常是基然后形成硫酯键，过后再传递给底物</li>
+</ul>
+</li>
+<li>Ub在底物上可以结合多个位点，单泛素化；或单个位点结合多个（poly）泛素化</li>
+</ul>
+</li>
+<li><p>Edition by DUBs and PTMs</p>
+<ul>
+<li><p>泛素 code 的时候也会对其进行编辑，用DUB（去泛素化酶）、PTM（如磷酸化等）等</p>
+<p>方式进行编辑，比如 Ser65 磷酸化对 Parkin 蛋白功能会有很多影响。</p>
+</li>
+<li><p>例子：泛素的65位丝氨酸经过激酶 PINK1 蛋白催化磷酸化后不能与 UBD、E3 等蛋白作用了。但它可以激活 parkin（是一种含ring 结构域的E3连接酶），本来处于自我抑制的关闭状态不能结合 E2 连接酶，但在它结合 65 位磷酸化的 Ub 后被激活，这个信号通路在线粒体自噬中起作用，它被激活后使得一系列的受体蛋白识别产生自噬体包围线粒体出现线粒体自噬。</p>
+</li>
+</ul>
+</li>
+<li><p>Decoding by UBDs</p>
+<ul>
+<li>UBD 和Ub 之间有很多种作用方式，Mono-Ub 被 UBD 结合蛋白识别通过Ub44 位异亮氨酸，Ub 和UBD 之间多种共价相互作用增加特异性和亲和力，Decodet-即 UBD，不同的UBD 识别不同的泛素化修饰进而产生不同的生理学功能。</li>
+<li>泛素结合蛋白（UBP）与泛素化蛋白结合，阻止泛素化</li>
+</ul>
+</li>
+</ul>
+
 		</div>
 
 		
@@ -518,7 +561,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-12-16 14:34:15
+                    :</strong> 2024-12-16 22:39:22
             </li>
         
         <li>
@@ -678,7 +721,7 @@
                     </span>
                     
                         <span>
-                            12.7k words in total
+                            13.3k words in total
                         </span>
                     
                 </p>
