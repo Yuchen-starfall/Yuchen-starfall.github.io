@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-02-11T08:08:00.000Z">
-<meta property="article:modified_time" content="2025-02-13T11:01:29.149Z">
+<meta property="article:modified_time" content="2025-02-23T16:15:55.402Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="course">
 <meta property="article:tag" content="Hardy-Weinberg">
@@ -358,7 +358,7 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">29</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -366,7 +366,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">29</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -415,8 +415,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-02-13 19:01:29</span>
-            <span class="mobile">2025-02-13 19:01:29</span>
+            <span class="desktop">2025-02-24 00:15:55</span>
+            <span class="mobile">2025-02-24 00:15:55</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -647,11 +647,11 @@
 <td>Genotyping or Sequencing error</td>
 </tr>
 </tbody></table>
-<h4 id="HWE的多重检验"><a href="#HWE的多重检验" class="headerlink" title="HWE的多重检验"></a>HWE的多重检验</h4><p>多重检验是统计分析中的一个重要问题，尤其是在基因组学等领域，通常需要同时检验成千上万的假设。以下是问题的解释以及一些常见的解决方法：多重检验的问题当进行大量统计检验时，获得假阳性（Type I 错误）的概率会增加。例如：</p>
+<h4 id="HWE的多重检验"><a href="#HWE的多重检验" class="headerlink" title="HWE的多重检验"></a>HWE的多重检验</h4><p>多重检验是统计分析中的一个重要问题，尤其是在基因组学等领域，通常需要同时检验成千上万的假设。多重检验的问题当进行大量统计检验时，获得假阳性（Type I 错误）的概率会增加。在多重检验中，若直接使用原始p值进行推断，假阳性（第一类错误）的概率会显著增加。这是因为<strong>原始的显著性水平（α）是针对单个检验设计的</strong>，而多重检验会大幅提高整体犯错的概率。例如：</p>
 <ul>
 <li>如果你用 p 值阈值 0.05 检验 10,000 个基因，即使没有真正的关联，也可能有 500 个基因（10,000 的 5%）纯粹由于随机因素而被认为是显著的。</li>
 </ul>
-<p>常见的多重检验校正方法的简要说明，包括 <strong>Bonferroni 校正</strong>、<strong>Bonferroni Step-down (Holm) 校正</strong>、<strong>Westfall and Young 置换法</strong> 以及 <strong>Benjamini and Hochberg 错误发现率（FDR）</strong></p>
+<p>常见的多重检验校正方法的简要说明，包括 <strong>Bonferroni 校正</strong>、<strong>Bonferroni Step-down (Holm) 校正</strong>、<strong>Westfall and Young 置换法</strong> 以及 <strong>Benjamini and Hochberg 错误发现率（FDR）</strong>得到p-value</p>
 <table>
 <thead>
 <tr>
@@ -700,7 +700,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-02-13 19:01:29
+                    :</strong> 2025-02-24 00:15:55
             </li>
         
         <li>
@@ -740,6 +740,18 @@
 
 		
 		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2025/02/24/Polymorphism/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">Polymorphism</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
 			
 			
 			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
@@ -848,11 +860,11 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        27 posts in total
+                        29 posts in total
                     </span>
                     
                         <span>
-                            43.6k words in total
+                            45.1k words in total
                         </span>
                     
                 </p>
