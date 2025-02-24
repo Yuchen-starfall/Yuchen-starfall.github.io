@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-02-07T13:31:00.000Z">
-<meta property="article:modified_time" content="2025-02-23T12:00:08.368Z">
+<meta property="article:modified_time" content="2025-02-15T07:10:50.399Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Machine Learning">
 <meta name="twitter:card" content="summary">
@@ -357,7 +357,7 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">29</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -365,7 +365,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">29</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -414,8 +414,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-02-23 20:08</span>
-            <span class="mobile">2025-02-23 20:08</span>
+            <span class="desktop">2025-02-15 15:10:50</span>
+            <span class="mobile">2025-02-15 15:10:50</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -453,12 +453,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.9k Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.7k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>12 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>7 Mins</span>
         </span>
     
     
@@ -679,195 +679,13 @@
 <li>Convolutional neural networks（卷积）<ul>
 <li>将MLP的Dense layer（全连接层） –&gt; Convolution layer </li>
 <li>通过<strong>局部感知</strong>（并未对整个数据进行每层，而是从一个kXk的窗口进行线性计算）和<strong>参数共享</strong>（小范围窗口的权重保留用到平移窗口之后，底层设计：同一物体在不同位置能被识别）高效提取空间特征</li>
-<li>因为卷积操作对于位置是敏感，加入<strong>池化层（Pooling Layer）</strong>，降低特征图尺寸，增强平移不变性。</li>
+<li>加入<strong>池化层（Pooling Layer）</strong>，降低特征图尺寸，增强平移不变性。</li>
+<li></li>
 </ul>
 </li>
-<li>Recurrent neural networks（循环）<ul>
-<li><strong>通过循环结构捕捉序列中的时序依赖关系</strong>，常用于language model中的下一个词（时序）</li>
-<li>隐藏层</li>
-<li>需要有效的处理遗忘</li>
+<li>Recurrent neural networks（循环）</li>
+<li>Transform</li>
 </ul>
-</li>
-<li>Transform<ul>
-<li><strong>自注意力机制（Self-Attention）</strong></li>
-</ul>
-</li>
-</ul>
-<h3 id="Evaluation-Metrics"><a href="#Evaluation-Metrics" class="headerlink" title="Evaluation Metrics"></a>Evaluation Metrics</h3><h4 id="Underrating-Overfitting"><a href="#Underrating-Overfitting" class="headerlink" title="Underrating &amp; Overfitting"></a>Underrating &amp; Overfitting</h4><ul>
-<li>Training error: model error on the training data</li>
-<li>Generalization error: model error on new data。模型泛化能力</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Low training error</th>
-<th>High training error</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Low Generalization error</td>
-<td>Good</td>
-<td>Bug？</td>
-</tr>
-<tr>
-<td>High Generalization error</td>
-<td>Overfitting</td>
-<td>Underfitting</td>
-</tr>
-</tbody></table>
-<ul>
-<li>Model Complexity</li>
-</ul>
-<p>模型可以拟合各种各样模型的能力</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/img-ML/4.png"
-                      alt="Model_Complexity"
-                ></p>
-<ul>
-<li>Data Complexity</li>
-</ul>
-<p>Multiple factors matters</p>
-<ul>
-<li>Model Complexity vs Data Complexity</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/img-ML/5.png"
-                      alt="model_vs_data"
-                ></p>
-<p><strong>Pick a model with a proper complexity for your data</strong></p>
-<h4 id="Estimiate-Generalization-Error"><a href="#Estimiate-Generalization-Error" class="headerlink" title="Estimiate Generalization Error"></a>Estimiate Generalization Error</h4><p>Approximated by the error on a holdout <strong>test dataset</strong>, which has never been seen by the model and can be only used once.</p>
-<p><strong>Validation dataset</strong>: 训练数据集一部分，可以使用多次</p>
-<p>Split your data into “train” and “valid” sets (often calls “test”)</p>
-<p>用验证数据集的指标代替泛化的指标</p>
-<ul>
-<li>数据独立同分布才可以使用随机分</li>
-<li>有时序等特征等信息的数据不能随机</li>
-</ul>
-<p><strong>K-fold Cross Validation</strong></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/img-ML/6.png"
-                      alt="k-fold"
-                ></p>
-<h3 id="Model-Combination"><a href="#Model-Combination" class="headerlink" title="Model Combination"></a>Model Combination</h3><h4 id="Bias-Variance（偏差、方差）"><a href="#Bias-Variance（偏差、方差）" class="headerlink" title="Bias &amp; Variance（偏差、方差）"></a>Bias &amp; Variance（偏差、方差）</h4><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/img-ML/7.png"
-                      alt="Bias"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/img-ML/8.png"
-                      alt="Bias"
-                ></p>
-<p>模型泛化误差：每次训练模型与真实值之间的差+每次训练出来的模型与平均模型的差别（方差）+噪音</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/img-ML/9.png"
-                      alt="Bias"
-                ></p>
-<ul>
-<li>Reduce bias<ul>
-<li>A more complex model</li>
-<li>Boosting<ul>
-<li><strong>顺序训练多个弱模型</strong>，每个模型专注于修正前一个模型的错误，每一个新模型都试图拟合前一个模型的残差（即真实值与当前集成模型的预测值之差），从而逐步减少偏差。</li>
-<li>策略类似于梯度下降</li>
-<li>Gradient Boosting Decision Trees (GBDT)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Reduce variance<ul>
-<li>A simpler model</li>
-<li>Bagging – - Bootstrap AGGregatING<ul>
-<li>Bagging 主要针对高方差模型（如未剪枝的决策树，unstable model），通过集成降低方差，但对偏差影响较小。</li>
-<li>从原始数据集中有放回地抽取多个子集（每个子集大小与原始数据相同，但包含重复样本）。</li>
-<li>独立训练n个模型（权重不share）。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>Stacking策略：串联多个模型，每个模型训练数据包括原始与前一层的模拟数据，最终用一个全连接层输出。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/img-ML/10.png"
-                      alt="Bias"
-                ></p>
-<h3 id="Model-Tuning"><a href="#Model-Tuning" class="headerlink" title="Model Tuning"></a>Model Tuning</h3><ul>
-<li>调参，Start with a good baseline. Tune a value, retrain the model to see the changes. 每次调一个值，重新训练，看训练集情况。</li>
-<li>tenesorboard  and weights &amp; bias看每一层的连接与调参记录</li>
-</ul>
-<h4 id="Automated-Machine-Learning"><a href="#Automated-Machine-Learning" class="headerlink" title="Automated Machine Learning"></a>Automated Machine Learning</h4><ul>
-<li><p>Hyperparameter optimization (HPO): find a good set of hyperparameters through search algorithms</p>
-<ul>
-<li><p>Black-box：一个超参数组合进去，一个模型评估值出来。不管什么优化。适用性强</p>
-</li>
-<li><p>Multi-fidelty：modifies the training job to speed up the search</p>
-</li>
-<li><p>Bayesian Optimization (BO)：Iteratively learn（迭代） a mapping from HP to objective function. Based on previous trials. Select the next trial based on the current estimation. </p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/img-ML/11.png"
-                      alt="贝叶斯"
-                ></p>
-</li>
-<li><p>Successive Halving（连续去半）：每次淘汰一半，仅继续训练高的一半。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/img-ML/12.png"
-                     
-                ></p>
-</li>
-<li><p>Hyperband：跑多次SH</p>
-</li>
-</ul>
-</li>
-<li><p>Neural architecture search (NAS): construct a good neural network model </p>
-<ul>
-<li>NAS with Reinforcement Learning</li>
-</ul>
-</li>
-</ul>
-<h3 id="Deep-Network-Tuning"><a href="#Deep-Network-Tuning" class="headerlink" title="Deep Network Tuning"></a>Deep Network Tuning</h3><h4 id="Normalization"><a href="#Normalization" class="headerlink" title="Normalization"></a>Normalization</h4><p>数据进行标准化（均值为0，方差为1），缓解梯度消失&#x2F;爆炸问题，加速模型收敛</p>
-<ul>
-<li><strong>批量归一化（Batch Normalization, BN）</strong>：对每个批次的每个通道进行归一化，适用于CNN。精度的影响不大，影响训练速度</li>
-<li><strong>层归一化（Layer Normalization, LN）</strong>：对单个样本的所有神经元归一化，适用于RNN&#x2F;Transformer。</li>
-</ul>
-<h4 id="Residual-Connection"><a href="#Residual-Connection" class="headerlink" title="Residual Connection"></a>Residual Connection</h4><p>引入跳跃连接（Skip Connection），将输入直接叠加到网络层的输出，解决深度网络的梯度消失和模型退化问题。典型应用如ResNet。</p>
-<h4 id="Attention-Mechanism"><a href="#Attention-Mechanism" class="headerlink" title="Attention Mechanism"></a>Attention Mechanism</h4><p>注意力机制通过动态分配权重聚焦关键信息，增强模型对长距离依赖和重要特征的捕捉能力。核心是<strong>查询（Query）、键（Key）、值（Value）</strong>的三元组计算</p>
-<h3 id="Transfer-Learning"><a href="#Transfer-Learning" class="headerlink" title="Transfer Learning"></a>Transfer Learning</h3><p>从一个地方学到的模型可以扩展到别的领域。</p>
-<h4 id="Fine-Tuning-techniques"><a href="#Fine-Tuning-techniques" class="headerlink" title="Fine-Tuning techniques"></a>Fine-Tuning techniques</h4><p>抽象地认为，多层神经网络过程是由小见大的抽象过程，我们想要从一个更大的神经网络完成一个小的任务的时候，认为权重、结构已经抽象出来蕴含在大任务中。因此，保留最后一层之外的所有层与权重，重新训练最后一层可以让大任务模型完成小任务。这也是称为微调。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/img-ML/13.png"
-                     
-                ></p>
-<h3 id="NLP-fine-tuning"><a href="#NLP-fine-tuning" class="headerlink" title="NLP fine-tuning"></a>NLP fine-tuning</h3><p>在自然语言处理（NLP）中，<strong>微调（Fine-tuning）</strong> 是指对预训练模型（如BERT、GPT等）进行针对性调整，使其适应特定下游任务（如文本分类、问答、命名实体识别等）的过程。</p>
-<p><strong>BERT（Bidirectional Encoder Representations from Transformers）</strong> 是一种基于Transformer架构的预训练语言模型，BERT支持的格式（如 <code>[CLS] + 文本A + [SEP] + 文本B + [SEP]</code>）</p>
-<ol>
-<li><strong>双向上下文编码</strong>：通过掩码语言模型（Masked Language Model, MLM）同时学习左右上下文信息。</li>
-<li><strong>通用表征能力</strong>：在大规模无标注语料（如Wikipedia）上预训练，捕捉通用的语言规律。</li>
-</ol>
-<p>微调方法：与上面类似</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/img-ML/14.png"
-                     
-                ></p>
 
 		</div>
 
@@ -882,7 +700,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-02-23 20:00:08
+                    :</strong> 2025-02-15 15:10:50
             </li>
         
         <li>
@@ -1011,7 +829,7 @@
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
 		<div class="page-title">Machine Learning</div>
-		<ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-is-crucial-in-ML"><span class="nav-text">Data is crucial in ML.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Machine-Learning"><span class="nav-text">Machine Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Evaluation-Metrics"><span class="nav-text">Evaluation Metrics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Combination"><span class="nav-text">Model Combination</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Tuning"><span class="nav-text">Model Tuning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deep-Network-Tuning"><span class="nav-text">Deep Network Tuning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transfer-Learning"><span class="nav-text">Transfer Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NLP-fine-tuning"><span class="nav-text">NLP fine-tuning</span></a></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-is-crucial-in-ML"><span class="nav-text">Data is crucial in ML.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Machine-Learning"><span class="nav-text">Machine Learning</span></a></li></ol>
 
 	</div>
 </div>
@@ -1038,11 +856,11 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        29 posts in total
+                        27 posts in total
                     </span>
                     
                         <span>
-                            45.1k words in total
+                            43.6k words in total
                         </span>
                     
                 </p>
