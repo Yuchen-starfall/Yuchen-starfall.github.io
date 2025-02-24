@@ -263,3 +263,217 @@ print(df)
    C  37  77  50  59  54  75
 ```
 
+#### 索引、切片
+
+`df['期中']['数']['1班']['A']`使用显式索引提出第一行第二列数据64
+
+`df.iloc[0,1]`，`df.loc[('1班','A'),('期中','数')]`使用隐式索引提出第一行第二列数据64
+
+`df.iloc[:]`
+
+#### 索引堆叠
+
+* 行索引转化为列索引`df.stack()`里面有一个参数level=-1/0/1/...，例如0代表吧最外面一层变成行索引
+* 列索引转化为行索引`df.unstack()`，同理，存在level参数
+
+### 数据操作
+
+#### 聚合
+
+* 同一行多列的和`df.sum(axis=1)`
+* 同一列多行的和`df.sum(axis=0)`，计算行中的第一层`df.sum(axis=0,level=0)`
+
+同理计算平均值`mean`最大值`sum`
+
+#### 数据合并
+
+* `pd.concat()`
+
+```python
+import numpy as np
+import pandas as pd
+
+def make_df(indexs,columns):
+    data = [[str(j) + str(i) for j in columns] for i in indexs]
+    df = pd.DataFrame(data = data,index = indexs,columns=columns)
+    return df
+
+df1 = make_df([1,2],list('AB'))
+df2 = make_df([3,4],list('AB'))
+
+concat1 = pd.concat([df1,df2])
+concat2 = pd.concat([df1,df2],axis=1)
+concat3 = pd.concat([df1,df2],ignore_index=True)
+concat4 = pd.concat([df1,df2],keys = ['x','y'])
+print(df1,df2,concat1,concat2,concat3,concat4,sep='\n\n')
+```
+
+```
+    A   B
+1  A1  B1
+2  A2  B2
+
+    A   B
+3  A3  B3
+4  A4  B4
+
+    A   B
+1  A1  B1
+2  A2  B2
+3  A3  B3
+4  A4  B4
+
+     A    B    A    B
+1   A1   B1  NaN  NaN
+2   A2   B2  NaN  NaN
+3  NaN  NaN   A3   B3
+4  NaN  NaN   A4   B4
+
+    A   B
+0  A1  B1
+1  A2  B2
+2  A3  B3
+3  A4  B4
+
+      A   B
+x 1  A1  B1
+  2  A2  B2
+y 3  A3  B3
+  4  A4  B4
+
+```
+
+内匹配与外匹配，参数`join=inner`即取交集，显示共同部分
+
+* `pd.append()`。例子`df1.append(df2)`，结果类似于`concat2 = pd.concat([df1,df2],axis=1)`
+
+* `pd.merge()`，**key用于指定用于连接的列，如果没有相同的列名，使用left_on和right_on分别指定两个表中不同列作为连接字段**。
+
+  * 一对一合并
+
+  ```python
+  import pandas as pd
+  
+  df1 = pd.DataFrame({
+      'name':['张三','李四','王五'],
+      'id':[1,2,3],
+      'age':[22,33,44]
+  })
+  df2 = pd.DataFrame({
+      'id':[2,3,4],
+      'sex':['男','女','男'],
+      'job':['Saler','CEO','Programer']
+  })
+  merge = pd.merge(df1,df2,how='left',on='id')
+  print(merge)
+  ```
+
+  ```
+    name  id  age  sex    job
+  0   张三   1   22  NaN    NaN
+  1   李四   2   33    男  Saler
+  2   王五   3   44    女    CEO
+  ```
+
+  * 多对一合并
+
+  ```python
+  import pandas as pd
+  
+  df1 = pd.DataFrame({
+      'name':['张三','李四','王五'],
+      'id':[1,2,2],
+      'age':[22,33,44]
+  })
+  df2 = pd.DataFrame({
+      'id':[2,3,4],
+      'sex':['男','女','男'],
+      'job':['Saler','CEO','Programer']
+  })
+  merge = pd.merge(df1,df2,how='left',on='id')
+  print(merge)
+  ```
+
+  ```
+    name  id  age  sex    job
+  0   张三   1   22  NaN    NaN
+  1   李四   2   33    男  Saler
+  2   王五   2   44    男  Saler
+  ```
+
+  * 多对多合并
+
+  ```python
+  import pandas as pd
+  
+  df1 = pd.DataFrame({
+      'name':['张三','李四','王五'],
+      'id':[1,2,2],
+      'age':[22,33,44]
+  })
+  df2 = pd.DataFrame({
+      'id':[2,2,4],
+      'sex':['男','女','男'],
+      'job':['Saler','CEO','Programer']
+  })
+  merge = pd.merge(df1,df2,how='left',on='id')
+  print(merge)
+  ```
+
+  ```
+    name  id  age  sex    job
+  0   张三   1   22  NaN    NaN
+  1   李四   2   33    男  Saler
+  2   李四   2   33    女    CEO
+  3   王五   2   44    男  Saler
+  4   王五   2   44    女    CEO
+  ```
+
+  `how='left'`代表使用左连接，意义是现实左边的所有数据和右边的公共数据
+
+#### 缺失值数据
+
+* `.isnull`、`.notnull`展示矩阵的每个位置的布尔值
+* `all()`必须全为True才是True。`any()`只要有一个True就得到True。
+* `df.isnull().any()`常用与找到有空的**列** 。`df.isnull().any(axis=1)`为空的**行**
+* `df.notnull().all()`常用与找到不为空的**列**。 
+
+* 对行\列进行过滤，所有没有缺失值的行\列
+
+```python
+# 扩展之后可以不针对空值，可以加筛选条件
+# 对行进行过滤
+cond = df.notnull().all(axis=1)
+df[cond]
+
+
+# 对列进行过滤
+cond = df.notnull().all()
+df.loc[:,cond]
+```
+
+```
+# 仅能处理空值
+df.dropna() # 删除有空的行
+df.dropna(axis=1) # 删除有空的列
+df.dropna(how='all') # 仅这一列全是空才删除
+```
+
+* 填充空值。`df.fillna(value=0)`，使用`inplace=True`可以改变原数据
+
+#### 重复值
+
+`.duplicated(keep='first')`重复行,保留第一行，和第一行重复显示TRUE。如果想判断一行的某几列重复：`.duplicated(subset=['列名'])`
+
+`.drop_duplicated()`删除。
+
+#### 替换
+
+* `df['列名'].map(lambda x:x*10)` 。map函数仅仅可以可以处理series
+
+* 加一列判断是否及格`df['是否及格']=df['判断列名'].map(lambda n:'及格' if n>60 else '不及格')`
+
+* 修改行索引名`df.rename[('A':'B')]`,修改列索引名`df.rename[('A':'B'),axis=1]`
+
+* 重设置行索引`df.set_index[keys = ['A']]`，重置索引`df.reset_index()`、
+* `df.apply(lammbda x:x.mean(),axis=0)`。求每一列数据等平均值
