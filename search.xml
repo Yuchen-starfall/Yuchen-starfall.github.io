@@ -512,6 +512,7 @@
       </categories>
       <tags>
         <tag>Article</tag>
+        <tag>Heterosis</tag>
       </tags>
   </entry>
   <entry>
@@ -4490,7 +4491,7 @@
   </entry>
   <entry>
     <title>Deep-learn -- linear regression</title>
-    <url>/2025/02/24/Learning%20Deep-learn%20--%20linear%20regression/</url>
+    <url>/2025/02/24/Deep-learn%20--%20linear%20regression/</url>
     <content><![CDATA[<h3 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h3><p><code>pip install jupyter d2l torch torchvision</code></p>
 <p>启动：</p>
 <p><code>jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser</code></p>
@@ -4570,6 +4571,19 @@
         <tag>Machine Learning</tag>
         <tag>Deep-learn</tag>
         <tag>linear regression</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Deep-learn -- softmax regression</title>
+    <url>/2025/03/01/Deep-learn%20--%20softmax%20regression/</url>
+    <content><![CDATA[<h3 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h3>]]></content>
+      <categories>
+        <category>Machine Learning and AI Studies</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Deep-learn</tag>
+        <tag>softmax regression</tag>
       </tags>
   </entry>
 </search>
