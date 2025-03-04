@@ -36,7 +36,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2024-12-14T11:33:00.000Z">
-<meta property="article:modified_time" content="2025-02-24T14:59:19.019Z">
+<meta property="article:modified_time" content="2025-03-04T12:18:17.978Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Programe">
 <meta property="article:tag" content="Linux">
@@ -423,7 +423,7 @@ mjx-container[display="true"] + br {
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">32</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">34</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -431,7 +431,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">31</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">33</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -480,8 +480,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-02-24 22:59:19</span>
-            <span class="mobile">2025-02-24 22:59:19</span>
+            <span class="desktop">2025-03-04 20:18:17</span>
+            <span class="mobile">2025-03-04 20:18:17</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -523,12 +523,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>6.1k Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>6.8k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>22 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>26 Mins</span>
         </span>
     
     
@@ -628,6 +628,29 @@ mjx-container[display="true"] + br {
 </ol>
 <p>将目录下的所有文件列出来(含属性与隐藏档)</p>
 <p><code> [root@www ~]# ls -al ~</code></p>
+<ul>
+<li><p>**<code>ls -l</code>**：以长格式列出文件和目录的详细信息。</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>输出示例</strong>：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-rw-r--r-- 1 user group  4096 Oct  1 12:34 file.txt</span><br><span class="line">drwxr-xr-x 2 user group  4096 Oct  1 12:34 dir</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>每一列的含义</strong>：</p>
+<ol>
+<li><strong>文件类型和权限</strong>（如 <code>-rw-r--r--</code>）：<ul>
+<li>第 1 个字符：文件类型（<code>-</code> 表示普通文件，<code>d</code> 表示目录，<code>l</code> 表示符号链接）。</li>
+<li>后 9 个字符：权限（<code>rwx</code> 分别表示读、写、执行，分为用户、组、其他三组）。</li>
+</ul>
+</li>
+<li><strong>硬链接数</strong>（如 <code>1</code>）。</li>
+<li><strong>所有者</strong>（如 <code>user</code>）。</li>
+<li><strong>所属组</strong>（如 <code>group</code>）。</li>
+<li><strong>文件大小</strong>（如 <code>4096</code>，单位为字节）。</li>
+<li><strong>最后修改时间</strong>（如 <code>Oct 1 12:34</code>）。</li>
+<li><strong>文件名</strong>（如 <code>file.txt</code>）。</li>
+</ol>
+</li>
+</ul>
 <h3 id="cd（切换路径）"><a href="#cd（切换路径）" class="headerlink" title="cd（切换路径）"></a>cd（切换路径）</h3><h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><p><code>  cd [相对路径或绝对路径]</code></p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#使用 mkdir 命令创建 runoob 目录</span><br><span class="line">[root@www ~]# mkdir runoob</span><br><span class="line"></span><br><span class="line">#使用绝对路径切换到 runoob 目录</span><br><span class="line">[root@www ~]# cd /root/runoob/</span><br><span class="line"></span><br><span class="line">#使用相对路径切换到 runoob 目录</span><br><span class="line">[root@www ~]# cd ./runoob/</span><br><span class="line"></span><br><span class="line"># 表示回到自己的家目录，亦即是 /root 这个目录</span><br><span class="line">[root@www runoob]# cd ~</span><br><span class="line"></span><br><span class="line"># 表示去到目前的上一级目录，亦即是 /root 的上一级目录的意思；</span><br><span class="line">[root@www ~]# cd ..</span><br></pre></td></tr></table></figure></div>
 
@@ -753,7 +776,8 @@ mjx-container[display="true"] + br {
 
 <p>运行时可以输入的命令有：</p>
 <ul>
-<li>空白键  ：向下翻动一页；</li>
+<li><strong>空白键  ：向下翻动一页；</strong></li>
+<li><strong>b - 向上翻页</strong></li>
 <li>j - 向上移动；</li>
 <li>k - 向下移动；</li>
 <li>q - 退出 less ；</li>
@@ -847,7 +871,7 @@ mjx-container[display="true"] + br {
 </li>
 <li><p><strong>&gt;&gt;<strong>：追加标准输出。将命令的输出重定向到文件，</strong>追加</strong>到文件末尾。</p>
 </li>
-<li><p>**&lt;**：重定向标准输入。将文件内容作为命令的输入。</p>
+<li><p><strong>&lt;<strong>：重定向标准</strong>输入</strong>。将文件内容作为命令的输入。</p>
 </li>
 <li><p>**2&gt;**：重定向标准错误。将错误信息输出到文件，覆盖文件内容。</p>
 </li>
@@ -862,13 +886,63 @@ mjx-container[display="true"] + br {
 <li><p><strong>tee -a</strong>：同时输出到终端和文件。tee 命令将标准输入的数据输出到 <strong>终端</strong> 和 <strong>文件</strong>。（不覆盖文件）</p>
 </li>
 </ul>
-<p><strong>pv（Pipe Viewer） 是一个非常实用的命令行工具，用于在处理数据流时显示进度信息。它可以监控数据通过管道的流速、传输量以及预计完成的时间。</strong></p>
-<p><strong>流的分类：</strong></p>
+
+  <div class="note-large blue">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>提示</p>
+
+    </div>
+    <div class="notel-content">
+      <p><strong>pv（Pipe Viewer） 是一个非常实用的命令行工具，用于在处理数据流时显示进度信息。它可以监控数据通过管道的流速、传输量以及预计完成的时间。</strong></p>
+
+    </div>
+  </div>
+
+
+  <div class="note-large blue">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>提示</p>
+
+    </div>
+    <div class="notel-content">
+      <p><strong>流的分类：</strong></p>
 <ul>
 <li>stdin<strong>（标准输入）：</strong>输入流，默认从键盘读取，文件描述符为 <strong>0</strong>。</li>
 <li>stdout<strong>（标准输出）：</strong>输出流，默认输出到终端，文件描述符为 <strong>1</strong>。</li>
 <li>stderr<strong>（标准错误）：</strong>错误流，默认输出到终端，文件描述符为 <strong>2</strong>。</li>
 </ul>
+
+    </div>
+  </div>
+
+<h3 id="通配符（Wildcards）"><a href="#通配符（Wildcards）" class="headerlink" title="通配符（Wildcards）"></a>通配符（Wildcards）</h3><ol>
+<li><strong><code>\*</code>（星号）</strong>：<ul>
+<li>匹配任意长度的任意字符（包括空字符）。</li>
+<li>示例：<ul>
+<li><code>*.txt</code>：匹配所有以 <code>.txt</code> 结尾的文件（如 <code>file.txt</code>、<code>note.txt</code>）。</li>
+<li><code>file*</code>：匹配所有以 <code>file</code> 开头的文件（如 <code>file1</code>、<code>file_backup</code>）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>?</code>（问号）</strong>：<ul>
+<li>匹配单个任意字符。</li>
+<li>示例：<ul>
+<li><code>file?.txt</code>：匹配 <code>file1.txt</code>、<code>fileA.txt</code>，但不匹配 <code>file10.txt</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>[...]</code>（方括号）</strong>：<ul>
+<li>匹配方括号内的任意一个字符。</li>
+<li>示例：<ul>
+<li><code>file[123].txt</code>：匹配 <code>file1.txt</code>、<code>file2.txt</code>、<code>file3.txt</code>。</li>
+<li><code>file[a-c].txt</code>：匹配 <code>filea.txt</code>、<code>fileb.txt</code>、<code>filec.txt</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 <h2 id="更多的重定向和过滤：head，tail，awk，grep，sed"><a href="#更多的重定向和过滤：head，tail，awk，grep，sed" class="headerlink" title="更多的重定向和过滤：head，tail，awk，grep，sed"></a>更多的重定向和过滤：head，tail，awk，grep，sed</h2><ul>
 <li><p>head：显示文件的开头内容</p>
 <ul>
@@ -1276,7 +1350,7 @@ mjx-container[display="true"] + br {
 <li>/dev/null：丢弃输出。</li>
 <li>&amp;：将命令放到后台运行。</li>
 </ul>
-<h2 id="文件系统：权限，-chown-，-chmod-，-umask"><a href="#文件系统：权限，-chown-，-chmod-，-umask" class="headerlink" title="文件系统：权限， chown ， chmod ， umask"></a>文件系统：权限， chown ， chmod ， umask</h2><p>文件权限（File Permissions）每个文件和目录都有三种权限：</p>
+<h2 id="文件系统：权限，-chown-，-chmod"><a href="#文件系统：权限，-chown-，-chmod" class="headerlink" title="文件系统：权限， chown ， chmod"></a>文件系统：权限， chown ， chmod</h2><p>文件权限（File Permissions）每个文件和目录都有三种权限：</p>
 <ul>
 <li><strong>读权限（r）</strong>：允许查看文件内容。</li>
 <li><strong>写权限（w）</strong>：允许修改文件内容。</li>
@@ -1291,6 +1365,77 @@ mjx-container[display="true"] + br {
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod [选项] 权限 文件名</span><br></pre></td></tr></table></figure></div>
 
 <p><strong>符号方式</strong>：使用字母 r、w、x 表示读、写、执行权限，使用 +、- 来添加或去除权限。</p>
+<h4 id="chown"><a href="#chown" class="headerlink" title="chown"></a><code>chown</code></h4><ul>
+<li><p>修改文件的所有者和所属组。</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown user:group file.txt</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<h4 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a><code>chmod</code></h4><ul>
+<li><p>修改文件的权限。</p>
+<ul>
+<li><p>符号模式：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod u+x file.txt  # 给所有者添加执行权限</span><br><span class="line">chmod go-w file.txt # 移除组和其他用户的写权限</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>数字模式：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 755 file.txt  # rwxr-xr-x</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+</li>
+</ul>
+<h2 id="磁盘使用情况"><a href="#磁盘使用情况" class="headerlink" title="磁盘使用情况"></a>磁盘使用情况</h2><h4 id="du"><a href="#du" class="headerlink" title="du"></a><strong><code>du</code></strong></h4><ul>
+<li><p>查看文件或目录的磁盘使用情况。</p>
+<ul>
+<li><p>查看当前目录的总大小：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du -sh</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>查看当前目录下每个文件/目录的大小：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du -hs *</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+</li>
+</ul>
+<h4 id="df"><a href="#df" class="headerlink" title="df"></a><strong><code>df</code></strong></h4><ul>
+<li><p>查看文件系统的磁盘使用情况。</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><code>-h</code>：以人类可读的格式显示。</li>
+</ul>
+</li>
+</ul>
+<h2 id="SSH（Secure-Shell）"><a href="#SSH（Secure-Shell）" class="headerlink" title="SSH（Secure Shell）"></a>SSH（Secure Shell）</h2><h3 id="SSH-远程登录"><a href="#SSH-远程登录" class="headerlink" title="SSH 远程登录"></a>SSH 远程登录</h3><p>SSH 是一种加密的网络协议，用于安全地访问远程服务器。</p>
+<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh username@remote_host</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><code>username</code>：远程服务器的用户名。</li>
+<li><code>remote_host</code>：远程服务器的IP地址或域名。</li>
+</ul>
+<h3 id="配置无密码认证（SSH-密钥对）"><a href="#配置无密码认证（SSH-密钥对）" class="headerlink" title="配置无密码认证（SSH 密钥对）"></a><strong>配置无密码认证（SSH 密钥对）</strong></h3><p>无密码认证通过 SSH 密钥对实现，包括公钥和私钥。<code>ssh-agent</code> 是一个密钥管理器，<code>ssh-add</code> 用于将私钥添加到 <code>ssh-agent</code> 中。</p>
+<ol>
+<li><p>生成安全的 SSH 密钥对，使用 <code>ssh-keygen</code> 生成一个强密钥对：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t ed25519 -C "your_email@example.com"</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><code>-t ed25519</code>：使用更安全的 Ed25519 算法（如果系统不支持，可以使用 <code>-t rsa -b 4096</code>）。</li>
+<li><code>-C</code>：添加注释（通常为邮箱）。</li>
+</ul>
+</li>
+<li><p>启动ssh-agent<code>eval "$(ssh-agent -s)"</code>，使用 <code>ssh-add</code> 将私钥添加到 <code>ssh-agent</code>：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_ed25519</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>如果生成密钥时设置了密码，会提示输入密码。</li>
+<li>添加成功后，会显示密钥的指纹和注释。</li>
+<li>查看已添加密钥<code>ssh-add -l</code></li>
+</ul>
+</li>
+<li><p>将公钥上传到远程服务器</p>
+</li>
+</ol>
+<p>​	使用 <code>ssh-copy-id</code> 将公钥上传到远程服务器：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i ~/.ssh/id_ed25519.pub username@remote_host</span><br></pre></td></tr></table></figure></div>
+
+<p>​	输入远程服务器的密码后，公钥会被添加到 <code>~/.ssh/authorized_keys</code> 文件中。</p>
+<ol start="4">
+<li>无密码登陆<code>ssh username@remote_host</code></li>
+</ol>
 
 		</div>
 
@@ -1305,7 +1450,7 @@ mjx-container[display="true"] + br {
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-02-24 22:59:19
+                    :</strong> 2025-03-04 20:18:17
             </li>
         
         <li>
@@ -1438,7 +1583,7 @@ mjx-container[display="true"] + br {
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
 		<div class="page-title">Foundation of Linux</div>
-		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="nav-text">注意点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-text">Linux系统目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">Linux常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ls%EF%BC%88%E5%88%97%E5%87%BA%E7%9B%AE%E5%BD%95%EF%BC%89"><span class="nav-text">ls（列出目录）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cd%EF%BC%88%E5%88%87%E6%8D%A2%E8%B7%AF%E5%BE%84%EF%BC%89"><span class="nav-text">cd（切换路径）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pwd-%E6%98%BE%E7%A4%BA%E7%9B%AE%E5%89%8D%E6%89%80%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="nav-text">pwd (显示目前所在的目录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mkdir-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9B%AE%E5%BD%95"><span class="nav-text">mkdir (创建新目录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rmdir-%E5%88%A0%E9%99%A4%E7%A9%BA%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="nav-text">rmdir (删除空的目录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm-%E7%A7%BB%E9%99%A4%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="nav-text">rm (移除文件或目录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cp-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="nav-text">cp (复制文件或目录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv-%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95%EF%BC%8C%E6%88%96%E4%BF%AE%E6%94%B9%E5%90%8D%E7%A7%B0"><span class="nav-text">mv (移动文件与目录，或修改名称)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#man%EF%BC%88%E6%9F%A5%E8%AF%A2%E5%B8%AE%E5%8A%A9%EF%BC%89"><span class="nav-text">man（查询帮助）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort%EF%BC%88%E6%8E%92%E5%BA%8F%EF%BC%89"><span class="nav-text">sort（排序）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8-%E2%80%93-VIM"><span class="nav-text">Linux文本编辑器 – VIM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B"><span class="nav-text">Linux文件内容查看</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cat"><span class="nav-text">cat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tac"><span class="nav-text">tac</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nl"><span class="nav-text">nl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#more"><span class="nav-text">more</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#less"><span class="nav-text">less</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#head"><span class="nav-text">head</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#till"><span class="nav-text">till</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bash%EF%BC%9AShell%E3%80%81-profile-%E3%80%81-bashrc-%E3%80%81-bash-history"><span class="nav-text">Bash：Shell、 .profile 、 .bashrc 、 .bash_history</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bash%EF%BC%9A%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%EF%BC%8Cenv%EF%BC%8Cset%EF%BC%8Cexport"><span class="nav-text">Bash：环境变量，env，set，export</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bash%EF%BC%9A%E9%87%8D%E5%AE%9A%E5%90%91%EF%BC%8C-stdin-%EF%BC%8C-stdout-%EF%BC%8C-stderr-%EF%BC%8C-%EF%BC%8C-%EF%BC%8C-%EF%BC%8C-%EF%BC%8C-tee-%EF%BC%8C-pv"><span class="nav-text">Bash：重定向， stdin ， stdout ， stderr ， &lt; ， &gt; ，&gt;&gt; ， | ， tee ， pv</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A%E7%9A%84%E9%87%8D%E5%AE%9A%E5%90%91%E5%92%8C%E8%BF%87%E6%BB%A4%EF%BC%9Ahead%EF%BC%8Ctail%EF%BC%8Cawk%EF%BC%8Cgrep%EF%BC%8Csed"><span class="nav-text">更多的重定向和过滤：head，tail，awk，grep，sed</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">正则表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bash%EF%BC%9A%E4%BB%BB%E5%8A%A1%E6%8E%A7%E5%88%B6%EF%BC%8Cjobs%EF%BC%8Cfg"><span class="nav-text">Bash：任务控制，jobs，fg</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%9A%E6%9D%83%E9%99%90%EF%BC%8C-chown-%EF%BC%8C-chmod-%EF%BC%8C-umask"><span class="nav-text">文件系统：权限， chown ， chmod ， umask</span></a></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="nav-text">注意点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-text">Linux系统目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">Linux常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ls%EF%BC%88%E5%88%97%E5%87%BA%E7%9B%AE%E5%BD%95%EF%BC%89"><span class="nav-text">ls（列出目录）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cd%EF%BC%88%E5%88%87%E6%8D%A2%E8%B7%AF%E5%BE%84%EF%BC%89"><span class="nav-text">cd（切换路径）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pwd-%E6%98%BE%E7%A4%BA%E7%9B%AE%E5%89%8D%E6%89%80%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="nav-text">pwd (显示目前所在的目录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mkdir-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9B%AE%E5%BD%95"><span class="nav-text">mkdir (创建新目录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rmdir-%E5%88%A0%E9%99%A4%E7%A9%BA%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="nav-text">rmdir (删除空的目录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm-%E7%A7%BB%E9%99%A4%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="nav-text">rm (移除文件或目录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cp-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="nav-text">cp (复制文件或目录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv-%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95%EF%BC%8C%E6%88%96%E4%BF%AE%E6%94%B9%E5%90%8D%E7%A7%B0"><span class="nav-text">mv (移动文件与目录，或修改名称)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#man%EF%BC%88%E6%9F%A5%E8%AF%A2%E5%B8%AE%E5%8A%A9%EF%BC%89"><span class="nav-text">man（查询帮助）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort%EF%BC%88%E6%8E%92%E5%BA%8F%EF%BC%89"><span class="nav-text">sort（排序）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8-%E2%80%93-VIM"><span class="nav-text">Linux文本编辑器 – VIM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B"><span class="nav-text">Linux文件内容查看</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cat"><span class="nav-text">cat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tac"><span class="nav-text">tac</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nl"><span class="nav-text">nl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#more"><span class="nav-text">more</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#less"><span class="nav-text">less</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#head"><span class="nav-text">head</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#till"><span class="nav-text">till</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bash%EF%BC%9AShell%E3%80%81-profile-%E3%80%81-bashrc-%E3%80%81-bash-history"><span class="nav-text">Bash：Shell、 .profile 、 .bashrc 、 .bash_history</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bash%EF%BC%9A%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%EF%BC%8Cenv%EF%BC%8Cset%EF%BC%8Cexport"><span class="nav-text">Bash：环境变量，env，set，export</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bash%EF%BC%9A%E9%87%8D%E5%AE%9A%E5%90%91%EF%BC%8C-stdin-%EF%BC%8C-stdout-%EF%BC%8C-stderr-%EF%BC%8C-%EF%BC%8C-%EF%BC%8C-%EF%BC%8C-%EF%BC%8C-tee-%EF%BC%8C-pv"><span class="nav-text">Bash：重定向， stdin ， stdout ， stderr ， &lt; ， &gt; ，&gt;&gt; ， | ， tee ， pv</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E9%85%8D%E7%AC%A6%EF%BC%88Wildcards%EF%BC%89"><span class="nav-text">通配符（Wildcards）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A%E7%9A%84%E9%87%8D%E5%AE%9A%E5%90%91%E5%92%8C%E8%BF%87%E6%BB%A4%EF%BC%9Ahead%EF%BC%8Ctail%EF%BC%8Cawk%EF%BC%8Cgrep%EF%BC%8Csed"><span class="nav-text">更多的重定向和过滤：head，tail，awk，grep，sed</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">正则表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bash%EF%BC%9A%E4%BB%BB%E5%8A%A1%E6%8E%A7%E5%88%B6%EF%BC%8Cjobs%EF%BC%8Cfg"><span class="nav-text">Bash：任务控制，jobs，fg</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%9A%E6%9D%83%E9%99%90%EF%BC%8C-chown-%EF%BC%8C-chmod"><span class="nav-text">文件系统：权限， chown ， chmod</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A3%81%E7%9B%98%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5"><span class="nav-text">磁盘使用情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH%EF%BC%88Secure-Shell%EF%BC%89"><span class="nav-text">SSH（Secure Shell）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH-%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95"><span class="nav-text">SSH 远程登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%97%A0%E5%AF%86%E7%A0%81%E8%AE%A4%E8%AF%81%EF%BC%88SSH-%E5%AF%86%E9%92%A5%E5%AF%B9%EF%BC%89"><span class="nav-text">配置无密码认证（SSH 密钥对）</span></a></li></ol></li></ol>
 
 	</div>
 </div>
@@ -1465,11 +1610,11 @@ mjx-container[display="true"] + br {
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        31 posts in total
+                        33 posts in total
                     </span>
                     
                         <span>
-                            49.8k words in total
+                            51.2k words in total
                         </span>
                     
                 </p>
