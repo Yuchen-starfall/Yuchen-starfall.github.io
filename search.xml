@@ -4735,7 +4735,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Deep-learn -- softmax regression</title>
+    <title>Deep-learn -- Softmax regression</title>
     <url>/2025/03/02/Deep-learn%20--%20softmax%20regression/</url>
     <content><![CDATA[<p>多层感知机在输出层和输入层之间增加一个或多个全连接隐藏层，并通过激活函数转换隐藏层的输出。</p>
 <h3 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h3><p>区别回归和分类的概念：回归估计一个连续值，分类预测一个离散类别。</p>
@@ -4990,8 +4990,9 @@
     <url>/2025/03/04/Phylogeny/</url>
     <content><![CDATA[<p>Phylogenetic trees diagram the evolutionary relationships between the taxa。</p>
 <p>进化树中的内定点所对印不一定在自然界中存在，但是taxa中是一定存在的。</p>
+<p>进化中的能量最低原则，在进化中，物种也是按照最简的路径mutant累计。</p>
 <h3 id="Terminology"><a href="#Terminology" class="headerlink" title="Terminology"></a>Terminology</h3><ul>
-<li>Homologue – 区别的话可以参考基因树与物种书一致<ul>
+<li>Homologue<ul>
 <li>Orthologue（直系同源）：直系同源基因通常保留相似的功能（尤其在核心代谢或发育通路中），因为自然选择倾向于维持其原始功能。</li>
 <li>Paralogue（旁系同源）：旁系同源基因常通过突变或选择压力演化出不同功能（如酶活性的改变、底物特异性变化）。可以扩展为功能相关的基因家族</li>
 </ul>
@@ -4999,7 +5000,7 @@
 <li>Xenologs（异源同源）– 水平基因转移。RNA病毒反转录插入人类基因组</li>
 </ul>
 <p><img lazyload="" src="/images/loading.svg" data-src="/img/img-Polymorphism/3.png" alt="Polymorphism"></p>
-<h3 id="Classfication"><a href="#Classfication" class="headerlink" title="Classfication"></a>Classfication</h3><p>物种事件突变事件通常不会同时发生，认为基因树不能替代物种树</p>
+<h3 id="Classfication"><a href="#Classfication" class="headerlink" title="Classfication"></a>Classfication</h3><p>物种事件,突变事件通常不会同时发生，认为基因树不能替代物种树</p>
 <ul>
 <li>Species tree(how are my species related?)<ul>
 <li><strong>all nodes indicate speciation events</strong></li>
@@ -5011,7 +5012,21 @@
 </li>
 </ul>
 <p><img lazyload="" src="/images/loading.svg" data-src="/img/img-Polymorphism/4.png" alt="Polymorphism"></p>
+<p>进化中的基因复制与基因组加倍事件，导致的新基因的产生，但并不是新物种的产生，需要有生殖隔离的出现才认为新物种</p>
 <p><img lazyload="" src="/images/loading.svg" data-src="/img/img-Polymorphism/5.png" alt="Polymorphism"></p>
+
+  <div class="note-large blue">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>note</p>
+
+    </div>
+    <div class="notel-content">
+      <p>计算机如何储存树？</p>
+<p>字符串：(((B,C),A),D)</p>
+
+    </div>
+  </div>
+
 <h4 id="Phenetics（表型分类学）"><a href="#Phenetics（表型分类学）" class="headerlink" title="Phenetics（表型分类学）"></a>Phenetics（表型分类学）</h4><p>Phenetics（也称数值分类学）主张通过生物的表型特征（如形态、生理、行为等可观察特征）的总体相似性进行分类，而<strong>不依赖于进化关系或祖先信息</strong>。其核心思想是“相似性即亲缘性”，即通过统计方法（如聚类分析）量化特征差异，构建分类或进化树。</p>
 <ul>
 <li><p>关键假说</p>
@@ -5041,35 +5056,6 @@
 </ul>
 </li>
 </ul>
-<h4 id="Cladistics（支序分类学）"><a href="#Cladistics（支序分类学）" class="headerlink" title="Cladistics（支序分类学）"></a>Cladistics（支序分类学）</h4><p>Cladistics（也称系统发育系统学）以<strong>共同祖先和演化分支事件</strong>为核心，通过分析<strong>共有衍生特征（synapomorphies）</strong>推断类群间的进化关系。目标是构建反映真实进化历史的分支图（cladogram），强调单系群（monophyletic group）的分类。</p>
-<ul>
-<li><p>关键假说：</p>
-<ul>
-<li><p><strong>单系群假说</strong>：分类单元应包含一个共同祖先及其所有后代。</p>
-</li>
-<li><p><strong>共有衍征假说</strong>：只有共有衍生特征（而非原始特征）能证明类群的亲缘关系。</p>
-</li>
-<li><p><strong>简约性假说（Occam’s Razor）</strong>：进化路径应假设最少的特征变化（即选择“最简约”的树）。</p>
-</li>
-</ul>
-</li>
-<li><p>方法：</p>
-<ul>
-<li><p>通过特征矩阵（如形态或分子数据）识别衍征，使用算法（如最大简约法）构建分支图。</p>
-</li>
-<li><p><strong>例子</strong>：根据羽毛、叉骨等衍征，将鸟类归入恐龙中的兽脚类。</p>
-</li>
-</ul>
-</li>
-<li><p>优势：</p>
-<ul>
-<li><p>明确区分祖征和衍征，减少趋同进化干扰。</p>
-</li>
-<li><p>强调进化历史的客观重建，被现代系统发育学广泛采用。</p>
-</li>
-</ul>
-</li>
-</ul>
 <h4 id="Unrooted-vs-Rooted-tree"><a href="#Unrooted-vs-Rooted-tree" class="headerlink" title="Unrooted vs Rooted tree"></a>Unrooted vs Rooted tree</h4><ul>
 <li><p>The root is the <strong>hypothesized ancestor</strong> of the sequences in the tree.</p>
 </li>
@@ -5077,17 +5063,19 @@
 </li>
 <li><p>There are two major ways to root trees:</p>
 <ul>
-<li>By outgroup</li>
+<li>By outgroup<ul>
+<li>外群的选择极为关键，不同的外群导致不同的书，有着不同的解读</li>
+<li>外群即不能太远，无法进行区分，太近了造成bias</li>
+</ul>
+</li>
 <li>By midpoint or distance</li>
 </ul>
 </li>
 </ul>
-<h3 id="Construct"><a href="#Construct" class="headerlink" title="Construct"></a>Construct</h3><p>将不同物种的同源序列（源自共同祖先的序列）按位点（site）对齐，识别保守区域和变异位点。直接计算两序列间不同位点的比例（如p-distance），考虑不同的site有着不同概率的突变（突变偏好），或发生多次突变在一个位点。</p>
-<hr>
+<p><img lazyload="" src="/images/loading.svg" data-src="/img/img-Polymorphism/7.png" alt="Polymorphism"></p>
 <h4 id="进化模型的底层假设"><a href="#进化模型的底层假设" class="headerlink" title="进化模型的底层假设"></a>进化模型的底层假设</h4><ul>
-<li><strong>分子钟假说（可选）</strong>：<ul>
+<li><strong>分子钟假说</strong>：<ul>
 <li>假设序列的进化速率在时间上恒定，用于估算分歧时间（如病毒进化分析）。</li>
-<li>实际中常被放松（如使用松弛分子钟模型）。</li>
 </ul>
 </li>
 <li><strong>中性理论</strong>：<ul>
@@ -5095,67 +5083,33 @@
 </ul>
 </li>
 </ul>
-<hr>
-<h4 id="保守区域的确认"><a href="#保守区域的确认" class="headerlink" title="保守区域的确认"></a>保守区域的确认</h4><p>保守区域是指在进化过程中<strong>受到较强功能约束</strong>的序列区域，其变异会受到自然选择的限制（如非同义突变被清除）。常见的保守区域包括：</p>
-<ul>
-<li><strong>功能关键位点</strong>（如酶的活性中心、DNA结合域）；</li>
-<li><strong>结构必需区域</strong>（如蛋白质二级结构、RNA茎环）；</li>
-<li><strong>调控元件</strong>（如启动子、miRNA靶位点）。</li>
-</ul>
-<ul>
-<li>判断保守区域的核心逻辑，差异少（低变异率）可能是保守区域的表现，但<strong>差异少 ≠ 保守</strong>！需通过以下步骤综合判断：</li>
-</ul>
-<h5 id="Step-1：多序列比对（MSA）"><a href="#Step-1：多序列比对（MSA）" class="headerlink" title="Step 1：多序列比对（MSA）"></a><strong>Step 1：多序列比对（MSA）</strong></h5><ul>
-<li><strong>目的</strong>：将同源序列对齐，识别变异位点和保守位点。</li>
-<li><strong>工具</strong>：Clustal Omega、MAFFT、Muscle等。</li>
-<li><strong>关键观察</strong>：<ul>
-<li><strong>保守位点（Conserved sites）</strong>：比对后所有序列在该位点残基一致（如所有物种的某位点均为“A”）。</li>
-<li><strong>可变位点（Variable sites）</strong>：存在残基差异（如“A”或“T”）。</li>
-</ul>
-</li>
-</ul>
-<h5 id="Step-2：量化变异程度"><a href="#Step-2：量化变异程度" class="headerlink" title="Step 2：量化变异程度"></a><strong>Step 2：量化变异程度</strong></h5><ul>
-<li><strong>统计指标</strong>：<ul>
-<li><strong>序列熵（Sequence entropy）</strong>：熵值越低，位点越保守。</li>
-<li><strong>替换率（Substitution rate）</strong>：通过模型（如PAML的dN/dS）计算每个位点的进化速率。</li>
-</ul>
-</li>
-<li><strong>工具</strong>：<ul>
-<li><strong>Rate4Site</strong>：基于进化树计算位点特异性进化速率。</li>
-<li><strong>Consurf</strong>：结合结构信息评估保守性。</li>
-</ul>
-</li>
-</ul>
-<h5 id="Step-3：功能与结构验证"><a href="#Step-3：功能与结构验证" class="headerlink" title="Step 3：功能与结构验证"></a><strong>Step 3：功能与结构验证</strong></h5><ul>
-<li><strong>功能注释</strong>：<ul>
-<li>比对已知功能域数据库（如Pfam、InterPro）判断保守位点是否位于功能关键区域。</li>
-<li>查看蛋白质结构（如PDB数据库），保守位点是否位于活性口袋或结构支撑区。</li>
-</ul>
-</li>
-<li><strong>实验验证</strong>：通过定点突变（如丙氨酸扫描）测试位点突变对功能的影响。</li>
-</ul>
-<h5 id="Step-4：选择压力分析"><a href="#Step-4：选择压力分析" class="headerlink" title="Step 4：选择压力分析"></a><strong>Step 4：选择压力分析</strong></h5><ul>
-<li><strong>dN/dS检验</strong>：<ul>
-<li>dN/dS≪1：纯化选择（保守）；</li>
-<li>dN/dS≈1：中性进化；</li>
-<li>dN/dS&gt;1：正选择。</li>
-</ul>
-</li>
-<li><strong>工具</strong>：PAML（codeml模块）、HyPhy。</li>
-</ul>
-<h4 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h4><ul>
+<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><ul>
 <li>最大简约法(maximum parsimony,MP)<ul>
-<li><strong>逻辑</strong>：选择需要最少突变事件的树（即“最简约”的树）。</li>
+<li><strong>逻辑</strong>：选择需要最少突变事件的树（即“最简约”的树）。 – 能量最低原则<ul>
 <li>核心假设：<strong>进化倾向于选择路径最短（突变最少）的路径</strong>。</li>
-<li><strong>局限性</strong>：易受<strong>长枝吸引（Long Branch Attraction）</strong>影响（快速进化的长枝被错误聚类）。</li>
 </ul>
 </li>
+<li><strong>局限性</strong>：<ul>
+<li>计算速度太慢，需要穷尽所有情况，在比较得到得分最小的树</li>
+<li>Long Branches Attraction（快速进化的长枝被错误聚类）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img lazyload="" src="/images/loading.svg" data-src="/img/img-Polymorphism/8.png" alt="Polymorphism"></p>
+<ul>
 <li>距离法(distance)<ul>
 <li>通过距离矩阵（每对物种的遗传距离）逐步合并最近邻的类群，形成树的分支。</li>
 <li>假设：<strong>距离越近的类群在进化树上越早分开</strong>。</li>
+<li>简介UPGMA聚类，得到树图。距离矩阵中去最小值，两个看为整体，再次计算距离矩阵</li>
+<li><strong>Neighbor joining策略</strong>。Most widely-used distance based methods</li>
 </ul>
 </li>
-<li>最大似然法(maximum likelihood,ML)<ul>
+</ul>
+<p><img lazyload="" src="/images/loading.svg" data-src="/img/img-Polymorphism/9.png" alt="Polymorphism"></p>
+<ul>
+<li><strong>最大似然法(maximum likelihood,ML)</strong><ul>
 <li><strong>逻辑</strong>：基于进化模型（如核苷酸替换模型），计算每棵树的似然值（即观测数据在该树下的概率），选择似然值最高的树。</li>
 <li>关键模型：如GTR（广义时间可逆模型）、Gamma分布（考虑位点速率异质性）。</li>
 <li><strong>优势</strong>：统计严谨，可整合复杂进化模式。</li>
@@ -5170,24 +5124,9 @@
 </ul>
 </li>
 </ul>
-<hr>
-<h4 id="关键问题与解决方案"><a href="#关键问题与解决方案" class="headerlink" title="关键问题与解决方案"></a>关键问题与解决方案</h4><ol>
-<li><strong>长枝吸引（Long Branch Attraction）</strong>：<ul>
-<li><strong>现象</strong>：快速进化的长枝（如高度分歧序列）在树中被错误聚类。</li>
-<li><strong>解决</strong>：使用复杂模型（如Gamma速率异质性）、增加数据量或选择更稳健的方法（如贝叶斯推断）。</li>
-</ul>
-</li>
-<li><strong>趋同进化与同塑性（Homoplasy）</strong>：<ul>
-<li><strong>现象</strong>：不同类群独立进化出相同位点状态（如氨基酸替换），导致误导性信号。</li>
-<li><strong>解决</strong>：使用模型区分趋同（如密码子模型）、增加位点数以稀释噪声。</li>
-</ul>
-</li>
-<li><strong>缺失数据与比对误差</strong>：<ul>
-<li><strong>影响</strong>：错误比对或缺失位点可能导致错误分支。</li>
-<li><strong>解决</strong>：严格比对质量控制、使用容忍缺失的模型（如PhyloBayes）。</li>
-</ul>
-</li>
-</ol>
+<h3 id="Test-tree-correct"><a href="#Test-tree-correct" class="headerlink" title="Test tree correct"></a>Test tree correct</h3><p>主要问题：没有金标准，永远不知道真正的树</p>
+<h4 id="Bootstrapping"><a href="#Bootstrapping" class="headerlink" title="Bootstrapping"></a>Bootstrapping</h4><p>类似于假设检验，有放回的随机抽相同大小样，重新够数，进行比对。（有的数据会被多次抽到，有的会没抽到，相当于看树的泛化能力）</p>
+<h4 id="Jackknifing"><a href="#Jackknifing" class="headerlink" title="Jackknifing"></a>Jackknifing</h4><p>无放回的抽样，多次重复构树比较。</p>
 ]]></content>
       <categories>
         <category>Heredity and evolution</category>
@@ -6409,5 +6348,41 @@
         <tag>Programe</tag>
         <tag>R</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Deep-learn -- Weight decay and dropout</title>
+    <url>/2025/03/02/Deep-learn%20--%20Weight%20decay/</url>
+    <content><![CDATA[<p>在<strong>多层感知机</strong>中，由于训练时的过拟合现象的存在，如何缓解训练过程中的过拟合（模型并不是死板的记住所有东西(噪音)，提高泛化能力），成为亟待解决的问题。这里提供一种的思路 – 使用正则化技术。其<strong>核心思想</strong>是通过<strong>限制权重的大小</strong>来降低模型复杂度。</p>
+<h3 id="Weight-decay"><a href="#Weight-decay" class="headerlink" title="Weight decay"></a>Weight decay</h3><p><strong>权重衰减</strong>通过在损失函数中添加一个与权重相关的惩罚项（通常是L2正则化项），迫使模型在训练过程中保持较小的权重值。其数学表达式为：</p>
+<p><mjx-container class="MathJax" jax="SVG" display="true" width="full" style="min-width: 30.249ex;"><svg style="vertical-align: -2.333ex; min-width: 30.249ex;" xmlns="http://www.w3.org/2000/svg" width="100%" height="5.797ex" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(0.0181,-0.0181) translate(0, -1531.1)"><g data-mml-node="math"><g data-mml-node="mtable" transform="translate(2078,0) translate(-2078,0)"><g transform="translate(0 1531.1) matrix(1 0 0 -1 0 0) scale(55.25)"><svg data-table="true" preserveAspectRatio="xMidYMid" viewBox="4607 -1531.1 1 2562.2"><g transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="mlabeledtr" transform="translate(0,161.1)"><g data-mml-node="mtd"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g><g data-mml-node="TeXAtom" transform="translate(714,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(600,0)"><path data-c="1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path></g><g data-mml-node="mi" transform="translate(1066,0)"><path data-c="1D464" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path></g></g></g><g data-mml-node="mo" transform="translate(2301.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mi" transform="translate(3357.6,0)"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g><g data-mml-node="mo" transform="translate(4260.8,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mfrac" transform="translate(5261.1,0)"><g data-mml-node="mi" transform="translate(220,676)"><path data-c="1D706" d="M166 673Q166 685 183 694H202Q292 691 316 644Q322 629 373 486T474 207T524 67Q531 47 537 34T546 15T551 6T555 2T556 -2T550 -11H482Q457 3 450 18T399 152L354 277L340 262Q327 246 293 207T236 141Q211 112 174 69Q123 9 111 -1T83 -12Q47 -12 47 20Q47 37 61 52T199 187Q229 216 266 252T321 306L338 322Q338 323 288 462T234 612Q214 657 183 657Q166 657 166 673Z"></path></g><g data-mml-node="mn" transform="translate(261.5,-686)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><rect width="783" height="60" x="120" y="220"></rect></g><g data-mml-node="munder" transform="translate(6450.7,0)"><g data-mml-node="mo"><path data-c="2211" d="M60 948Q63 950 665 950H1267L1325 815Q1384 677 1388 669H1348L1341 683Q1320 724 1285 761Q1235 809 1174 838T1033 881T882 898T699 902H574H543H251L259 891Q722 258 724 252Q725 250 724 246Q721 243 460 -56L196 -356Q196 -357 407 -357Q459 -357 548 -357T676 -358Q812 -358 896 -353T1063 -332T1204 -283T1307 -196Q1328 -170 1348 -124H1388Q1388 -125 1381 -145T1356 -210T1325 -294L1267 -449L666 -450Q64 -450 61 -448Q55 -446 55 -439Q55 -437 57 -433L590 177Q590 178 557 222T452 366T322 544L56 909L55 924Q55 945 60 948Z"></path></g><g data-mml-node="mi" transform="translate(600,-1084.4) scale(0.707)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g><g data-mml-node="msubsup" transform="translate(8061.4,0)"><g data-mml-node="mi"><path data-c="1D464" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path></g><g data-mml-node="mn" transform="translate(749,413) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(749,-247) scale(0.707)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g></g></g></g></svg><svg data-labels="true" preserveAspectRatio="xMaxYMid" viewBox="1278 -1531.1 1 2562.2"><g data-labels="true" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="mtd" id="mjx-eqn:1" transform="translate(0,911.1)"><text data-id-align="true"></text><g data-idbox="true" transform="translate(0,-750)"><g data-mml-node="mtext"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(389,0)"></path><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z" transform="translate(889,0)"></path></g></g></g></g></svg></g></g></g></g></svg></mjx-container></p>
+<ul>
+<li>其中<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.027ex;" xmlns="http://www.w3.org/2000/svg" width="1.319ex" height="1.597ex" role="img" focusable="false" viewBox="0 -694 583 706"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D706" d="M166 673Q166 685 183 694H202Q292 691 316 644Q322 629 373 486T474 207T524 67Q531 47 537 34T546 15T551 6T555 2T556 -2T550 -11H482Q457 3 450 18T399 152L354 277L340 262Q327 246 293 207T236 141Q211 112 174 69Q123 9 111 -1T83 -12Q47 -12 47 20Q47 37 61 52T199 187Q229 216 266 252T321 306L338 322Q338 323 288 462T234 612Q214 657 183 657Q166 657 166 673Z"></path></g></g></g></svg></mjx-container>是超参数</li>
+<li><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.357ex;" xmlns="http://www.w3.org/2000/svg" width="2.36ex" height="1.359ex" role="img" focusable="false" viewBox="0 -443 1043 600.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D464" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path></g><g data-mml-node="mi" transform="translate(749,-150) scale(0.707)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g></g></g></svg></mjx-container>是模型权重</li>
+</ul>
+<p>在随机梯度下降中：</p>
+<p><mjx-container class="MathJax" jax="SVG" display="true" width="full" style="min-width: 53.884ex;"><svg style="vertical-align: -2.148ex; min-width: 53.884ex;" xmlns="http://www.w3.org/2000/svg" width="100%" height="5.428ex" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(0.0181,-0.0181) translate(0, -1449.5)"><g data-mml-node="math"><g data-mml-node="mtable" transform="translate(2078,0) translate(-2078,0)"><g transform="translate(0 1449.5) matrix(1 0 0 -1 0 0) scale(55.25)"><svg data-table="true" preserveAspectRatio="xMidYMid" viewBox="9830.3 -1449.5 1 2399"><g transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="mlabeledtr"><g data-mml-node="mtd"><g data-mml-node="mi"><path data-c="1D464" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path></g><g data-mml-node="mo" transform="translate(993.8,0)"><path data-c="2190" d="M944 261T944 250T929 230H165Q167 228 182 216T211 189T244 152T277 96T303 25Q308 7 308 0Q308 -11 288 -11Q281 -11 278 -11T272 -7T267 2T263 21Q245 94 195 151T73 236Q58 242 55 247Q55 254 59 257T73 264Q121 283 158 314T215 375T247 434T264 480L267 497Q269 503 270 505T275 509T288 511Q308 511 308 500Q308 493 303 475Q293 438 278 406T246 352T215 315T185 287T165 270H929Q944 261 944 250Z"></path></g><g data-mml-node="mi" transform="translate(2271.6,0)"><path data-c="1D464" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path></g><g data-mml-node="mo" transform="translate(3209.8,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mi" transform="translate(4210,0)"><path data-c="1D702" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q156 442 175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336V326Q503 302 439 53Q381 -182 377 -189Q364 -216 332 -216Q319 -216 310 -208T299 -186Q299 -177 358 57L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mrow" transform="translate(4873.7,0)"><g data-mml-node="mo" transform="translate(0 -0.5)"><path data-c="28" d="M701 -940Q701 -943 695 -949H664Q662 -947 636 -922T591 -879T537 -818T475 -737T412 -636T350 -511T295 -362T250 -186T221 17T209 251Q209 962 573 1361Q596 1386 616 1405T649 1437T664 1450H695Q701 1444 701 1441Q701 1436 681 1415T629 1356T557 1261T476 1118T400 927T340 675T308 359Q306 321 306 250Q306 -139 400 -430T690 -924Q701 -936 701 -940Z"></path></g><g data-mml-node="mfrac" transform="translate(736,0)"><g data-mml-node="mrow" transform="translate(237.5,676)"><g data-mml-node="mi"><path data-c="1D715" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"></path></g><g data-mml-node="mi" transform="translate(566,0)"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g></g><g data-mml-node="mrow" transform="translate(220,-686)"><g data-mml-node="mi"><path data-c="1D715" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"></path></g><g data-mml-node="mi" transform="translate(566,0)"><path data-c="1D464" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path></g></g><rect width="1482" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(2680.2,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(3680.4,0)"><path data-c="1D706" d="M166 673Q166 685 183 694H202Q292 691 316 644Q322 629 373 486T474 207T524 67Q531 47 537 34T546 15T551 6T555 2T556 -2T550 -11H482Q457 3 450 18T399 152L354 277L340 262Q327 246 293 207T236 141Q211 112 174 69Q123 9 111 -1T83 -12Q47 -12 47 20Q47 37 61 52T199 187Q229 216 266 252T321 306L338 322Q338 323 288 462T234 612Q214 657 183 657Q166 657 166 673Z"></path></g><g data-mml-node="mi" transform="translate(4263.4,0)"><path data-c="1D464" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path></g><g data-mml-node="mo" transform="translate(4979.4,0) translate(0 -0.5)"><path data-c="29" d="M34 1438Q34 1446 37 1448T50 1450H56H71Q73 1448 99 1423T144 1380T198 1319T260 1238T323 1137T385 1013T440 864T485 688T514 485T526 251Q526 134 519 53Q472 -519 162 -860Q139 -885 119 -904T86 -936T71 -949H56Q43 -949 39 -947T34 -937Q88 -883 140 -813Q428 -430 428 251Q428 453 402 628T338 922T245 1146T145 1309T46 1425Q44 1427 42 1429T39 1433T36 1436L34 1438Z"></path></g></g><g data-mml-node="mo" transform="translate(10866.9,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mi" transform="translate(11922.7,0)"><path data-c="1D464" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path></g><g data-mml-node="mo" transform="translate(12638.7,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mn" transform="translate(13027.7,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(13749.9,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mi" transform="translate(14750.1,0)"><path data-c="1D702" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q156 442 175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336V326Q503 302 439 53Q381 -182 377 -189Q364 -216 332 -216Q319 -216 310 -208T299 -186Q299 -177 358 57L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(15247.1,0)"><path data-c="1D706" d="M166 673Q166 685 183 694H202Q292 691 316 644Q322 629 373 486T474 207T524 67Q531 47 537 34T546 15T551 6T555 2T556 -2T550 -11H482Q457 3 450 18T399 152L354 277L340 262Q327 246 293 207T236 141Q211 112 174 69Q123 9 111 -1T83 -12Q47 -12 47 20Q47 37 61 52T199 187Q229 216 266 252T321 306L338 322Q338 323 288 462T234 612Q214 657 183 657Q166 657 166 673Z"></path></g><g data-mml-node="mo" transform="translate(15830.1,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(16441.3,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mi" transform="translate(17441.6,0)"><path data-c="1D702" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q156 442 175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336V326Q503 302 439 53Q381 -182 377 -189Q364 -216 332 -216Q319 -216 310 -208T299 -186Q299 -177 358 57L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mfrac" transform="translate(17938.6,0)"><g data-mml-node="mrow" transform="translate(237.5,676)"><g data-mml-node="mi"><path data-c="1D715" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"></path></g><g data-mml-node="mi" transform="translate(566,0)"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g></g><g data-mml-node="mrow" transform="translate(220,-686)"><g data-mml-node="mi"><path data-c="1D715" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"></path></g><g data-mml-node="mi" transform="translate(566,0)"><path data-c="1D464" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path></g></g><rect width="1482" height="60" x="120" y="220"></rect></g></g></g></g></svg><svg data-labels="true" preserveAspectRatio="xMaxYMid" viewBox="1278 -1449.5 1 2399"><g data-labels="true" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="mtd" id="mjx-eqn:2"><g data-mml-node="mtext"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(389,0)"></path><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z" transform="translate(889,0)"></path></g></g></g></svg></g></g></g></g></svg></mjx-container></p>
+<ul>
+<li>其中 η是学习率。可见，每次更新前权重会先按比例 (1−ηλ)衰减，再沿梯度方向更新。</li>
+<li><strong>抑制大权重</strong>：通过惩罚较大的权重值，模型倾向于学习更平滑的决策边界，减少对训练数据中噪声的过拟合。</li>
+</ul>
+<h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><p>定义一下什么是一个“好”的预测模型，我们期待“好”的预测模型能在未知的数据上有很好的表现（好的泛化能力）。简言之，以图片为例，好的模型当我们对图像进行分类时，我们预计向像素<strong>添加一些随机噪声</strong>应该是<strong>基本无影响</strong>的。因此，Dropout这种通过随机“<strong>丢弃</strong>”神经元来防止过拟合的正则化技术。其核心思想是在训练过程中，以一定概率临时关闭神经元，迫使网络不过度依赖某些特定神经元。</p>
+<p>其数学表达式为，每一个神经元按照如下的概率关闭或开启：（并不是随机，总体期望不变）<br>$$<br>f(x)=</p>
+<p>\begin{cases}</p>
+<p> 0,&amp; p\<br> \frac{h}{1-p},&amp; \text {other}</p>
+<p>\end{cases}<br>$$<br><img lazyload="" src="/images/loading.svg" data-src="/img/img-learning_deeplearn/17.png"></p>
+]]></content>
+      <categories>
+        <category>Machine Learning and AI Studies</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Deep-learn</tag>
+        <tag>softmax regression</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/03/17/ggplot2/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
