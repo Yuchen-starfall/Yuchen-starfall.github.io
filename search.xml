@@ -1763,82 +1763,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Lipid</title>
-    <url>/2024/12/06/Lipid/</url>
-    <content><![CDATA[<h2 id="Foundation"><a href="#Foundation" class="headerlink" title="Foundation"></a>Foundation</h2><h3 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h3><p>按照化学组成</p>
-<ul>
-<li>丙三醇（甘油） + 3 脂肪酸（Fatty acyls） –&gt; 甘油三酯（储存能量、氧化供能）<ul>
-<li>据不同脂肪酸分简单&#x2F;混合甘油三酯（triacylglycerol）</li>
-<li>脂肪酸种类决定甘油三酯的熔点。链长、数目增加而增加</li>
-</ul>
-</li>
-<li>丙三醇 + 2 脂肪酸 + （磷酸 + 含氮化合物） –&gt; 甘油磷脂（生物膜脂质双分子层）</li>
-<li>鞘氨脂 + 脂肪酸 + 磷酸胆碱 –&gt; 神经鞘磷脂（生物膜重要成份）</li>
-<li>鞘氨脂 + 脂肪酸 + 糖  –&gt; 鞘糖脂（参与细胞识别与信息传递）</li>
-<li>胆固醇 + 脂肪酸 –&gt; 胆固醇脂（转化为胆汁酸、类固醇激素参与物质代谢调节）</li>
-</ul>
-<h3 id="Metabolism-of-triacylglycerol"><a href="#Metabolism-of-triacylglycerol" class="headerlink" title="Metabolism of triacylglycerol"></a>Metabolism of triacylglycerol</h3><ol>
-<li><p>脂肪动员（fat mobilization）</p>
-<ol>
-<li>关键酶：激素敏感性甘油三酯<strong>脂肪酶</strong></li>
-<li>脂解激素：胰高血糖素、肾上腺素、去甲肾上腺素。抗脂解激素：胰岛素、前列腺素E2</li>
-<li>禁食、饥饿、交感神经兴奋</li>
-</ol>
-</li>
-<li><p>甘油代谢</p>
-<ol>
-<li><p>甘油 + 甘油激酶 （<strong>消耗ATP过程</strong>） –&gt; 3-磷酸甘油 + 磷酸甘油脱氢酶 –&gt; 磷酸二羟丙酮</p>
-</li>
-<li><p>脂肪酸β-氧化</p>
-<ol>
-<li>脂肪酸 + CoA-SH + 脂酰CoA合成酶（Mg + ATP）–&gt; （内质网及线粒体外膜）脂酰CoA</li>
-<li>脂酰CoA进入线粒体（肉碱转移酶 I）<strong>限速步骤</strong></li>
-<li>脂酰CoA氧化分解（脱氢、加水、再脱氢、硫解）为乙酰CoA</li>
-<li>乙酰CoA –&gt; 三羧酸循环（彻底氧化）&#x2F;酮体（肝外组装）</li>
-</ol>
-<p>以16碳软脂酸的氧化为例：消耗两个ATP活化，7轮β-氧化产生8分子乙酰CoA、7分子NADH+H、7分子FADH2。8×10 + 7×2.5 + 7×1.5 -2 &#x3D; 108 -2 &#x3D;106</p>
-</li>
-</ol>
-</li>
-<li><p>酮体（乙酰乙酸(acetoacetate) 、β-羟丁酸(β-hydroxybutyrate)、丙酮(acetone)）</p>
-<ol>
-<li><p>合成： 2分子乙酰CoA + 乙酰CoA硫解酶 –&gt; 乙酰乙酰CoA + 乙酰CoA + HMGCoA合成酶 –&gt; HMGCoA + HMGCoA裂解酶 –&gt;  酮体互变</p>
-</li>
-<li><p>利用：β-羟丁酸 + β-羟丁酸脱氢酶  –&gt;  乙酰乙酸 + 琥珀酰CoA –&gt;  乙酰乙酰CoA + 琥珀酸 + HSCoA  –&gt;  乙酰CoA</p>
-</li>
-</ol>
-</li>
-<li><p>脂肪酸合成</p>
-<ol>
-<li>线粒体内乙酰CoA柠檬酸-丙酮酸循环出线粒体</li>
-<li>ATP + HCO3- + 乙酰CoA + 乙酰CoA<strong>羧化酶</strong>（限速酶，辅酶生物素） –&gt; <strong>丙二酰CoA</strong>（合成单体） + ADP + Pi</li>
-<li>缩合（合成酶）、加氢（还原酶）、脱水（脱水酶）、再加氢（还原酶）</li>
-</ol>
-</li>
-<li><p>胆固醇合成</p>
-<ol>
-<li><p>甲醛戊酸合成（HMG-CoA还原酶（限速），内质网，昼夜节律–午夜最高、中午最低）、鲨烯合成、胆固醇合成</p>
-</li>
-<li><p>调控：SCAP-SREBP（胆固醇调节元件结合蛋白）促进合成（它可以在ER上感知胆固醇的含量，如果胆固醇含量较少，便可启动胆固醇的合成）</p>
-</li>
-<li><p>转变胆汁酸、类固醇激素、皮肤：7-脱氢胆固醇 + UV –&gt; 维生素D3</p>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="Quize"><a href="#Quize" class="headerlink" title="Quize"></a>Quize</h2><h3 id="三类降血胆固醇药及其作用机制："><a href="#三类降血胆固醇药及其作用机制：" class="headerlink" title="三类降血胆固醇药及其作用机制："></a>三类降血胆固醇药及其作用机制：</h3><p>①他汀类药物：抑制HMG-CoA还原酶，降低胆固醇的合成。</p>
-<p>②Ezetimibe：抑制NPC1L1(NPC1L1 的作用：在小肠中作为食物胆固醇吸收的受体)，抑制从食物中吸收胆固醇。</p>
-<p>③PCSK9抑制剂：提高LDLR 稳定性，减少血液中LDL。</p>
-]]></content>
-      <categories>
-        <category>BIO-2000-Molecular_biology</category>
-      </categories>
-      <tags>
-        <tag>course</tag>
-        <tag>lipid</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Machine Learning</title>
     <url>/2025/02/07/Machine%20Learning/</url>
     <content><![CDATA[<h3 id="Data-is-crucial-in-ML"><a href="#Data-is-crucial-in-ML" class="headerlink" title="Data is crucial in ML."></a>Data is crucial in ML.</h3><p>Finding the right data is challenging!!!</p>
@@ -6385,5 +6309,81 @@
     <title></title>
     <url>/2025/03/17/ggplot2/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Lipid</title>
+    <url>/2024/12/06/lipid/</url>
+    <content><![CDATA[<h2 id="Foundation"><a href="#Foundation" class="headerlink" title="Foundation"></a>Foundation</h2><h3 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h3><p>按照化学组成</p>
+<ul>
+<li>丙三醇（甘油） + 3 脂肪酸（Fatty acyls） –&gt; 甘油三酯（储存能量、氧化供能）<ul>
+<li>据不同脂肪酸分简单/混合甘油三酯（triacylglycerol）</li>
+<li>脂肪酸种类决定甘油三酯的熔点。链长、数目增加而增加</li>
+</ul>
+</li>
+<li>丙三醇 + 2 脂肪酸 + （磷酸 + 含氮化合物） –&gt; 甘油磷脂（生物膜脂质双分子层）</li>
+<li>鞘氨脂 + 脂肪酸 + 磷酸胆碱 –&gt; 神经鞘磷脂（生物膜重要成份）</li>
+<li>鞘氨脂 + 脂肪酸 + 糖  –&gt; 鞘糖脂（参与细胞识别与信息传递）</li>
+<li>胆固醇 + 脂肪酸 –&gt; 胆固醇脂（转化为胆汁酸、类固醇激素参与物质代谢调节）</li>
+</ul>
+<h3 id="Metabolism-of-triacylglycerol"><a href="#Metabolism-of-triacylglycerol" class="headerlink" title="Metabolism of triacylglycerol"></a>Metabolism of triacylglycerol</h3><ol>
+<li><p>脂肪动员（fat mobilization）</p>
+<ol>
+<li>关键酶：激素敏感性甘油三酯<strong>脂肪酶</strong></li>
+<li>脂解激素：胰高血糖素、肾上腺素、去甲肾上腺素。抗脂解激素：胰岛素、前列腺素E2</li>
+<li>禁食、饥饿、交感神经兴奋</li>
+</ol>
+</li>
+<li><p>甘油代谢</p>
+<ol>
+<li><p>甘油 + 甘油激酶 （<strong>消耗ATP过程</strong>） –&gt; 3-磷酸甘油 + 磷酸甘油脱氢酶 –&gt; 磷酸二羟丙酮</p>
+</li>
+<li><p>脂肪酸β-氧化</p>
+<ol>
+<li>脂肪酸 + CoA-SH + 脂酰CoA合成酶（Mg + ATP）–&gt; （内质网及线粒体外膜）脂酰CoA</li>
+<li>脂酰CoA进入线粒体（肉碱转移酶 I）<strong>限速步骤</strong></li>
+<li>脂酰CoA氧化分解（脱氢、加水、再脱氢、硫解）为乙酰CoA</li>
+<li>乙酰CoA –&gt; 三羧酸循环（彻底氧化）/酮体（肝外组装）</li>
+</ol>
+<p>以16碳软脂酸的氧化为例：消耗两个ATP活化，7轮β-氧化产生8分子乙酰CoA、7分子NADH+H、7分子FADH2。8×10 + 7×2.5 + 7×1.5 -2 = 108 -2 =106</p>
+</li>
+</ol>
+</li>
+<li><p>酮体（乙酰乙酸(acetoacetate) 、β-羟丁酸(β-hydroxybutyrate)、丙酮(acetone)）</p>
+<ol>
+<li><p>合成： 2分子乙酰CoA + 乙酰CoA硫解酶 –&gt; 乙酰乙酰CoA + 乙酰CoA + HMGCoA合成酶 –&gt; HMGCoA + HMGCoA裂解酶 –&gt;  酮体互变</p>
+</li>
+<li><p>利用：β-羟丁酸 + β-羟丁酸脱氢酶  –&gt;  乙酰乙酸 + 琥珀酰CoA –&gt;  乙酰乙酰CoA + 琥珀酸 + HSCoA  –&gt;  乙酰CoA</p>
+</li>
+</ol>
+</li>
+<li><p>脂肪酸合成</p>
+<ol>
+<li>线粒体内乙酰CoA柠檬酸-丙酮酸循环出线粒体</li>
+<li>ATP + HCO3- + 乙酰CoA + 乙酰CoA<strong>羧化酶</strong>（限速酶，辅酶生物素） –&gt; <strong>丙二酰CoA</strong>（合成单体） + ADP + Pi</li>
+<li>缩合（合成酶）、加氢（还原酶）、脱水（脱水酶）、再加氢（还原酶）</li>
+</ol>
+</li>
+<li><p>胆固醇合成</p>
+<ol>
+<li><p>甲醛戊酸合成（HMG-CoA还原酶（限速），内质网，昼夜节律–午夜最高、中午最低）、鲨烯合成、胆固醇合成</p>
+</li>
+<li><p>调控：SCAP-SREBP（胆固醇调节元件结合蛋白）促进合成（它可以在ER上感知胆固醇的含量，如果胆固醇含量较少，便可启动胆固醇的合成）</p>
+</li>
+<li><p>转变胆汁酸、类固醇激素、皮肤：7-脱氢胆固醇 + UV –&gt; 维生素D3</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="Quize"><a href="#Quize" class="headerlink" title="Quize"></a>Quize</h2><h3 id="三类降血胆固醇药及其作用机制："><a href="#三类降血胆固醇药及其作用机制：" class="headerlink" title="三类降血胆固醇药及其作用机制："></a>三类降血胆固醇药及其作用机制：</h3><p>①他汀类药物：抑制HMG-CoA还原酶，降低胆固醇的合成。</p>
+<p>②Ezetimibe：抑制NPC1L1(NPC1L1 的作用：在小肠中作为食物胆固醇吸收的受体)，抑制从食物中吸收胆固醇。</p>
+<p>③PCSK9抑制剂：提高LDLR 稳定性，减少血液中LDL。</p>
+]]></content>
+      <categories>
+        <category>BIO-2000-Molecular_biology</category>
+      </categories>
+      <tags>
+        <tag>course</tag>
+        <tag>lipid</tag>
+      </tags>
   </entry>
 </search>
