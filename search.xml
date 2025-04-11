@@ -5401,23 +5401,8 @@
 <ul>
 <li>初始化 Conda</li>
 </ul>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda init bash</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>或者，如果你使用 Zsh：</li>
-</ul>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda init zsh</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>然后重新加载 Shell 配置：</li>
-</ul>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">exec $SHELL</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>安装 Mamba（它是 Conda 的加速版）</li>
-<li>在 base 环境中安装 Mamba：</li>
-</ul>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda install -n base -c conda-forge mamba</span><br></pre></td></tr></table></figure></div>
+<p>把路径写入到bashrc文件中，每次打开都自动加载</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">eval "$($PATH/miniforge3/bin/conda shell.bash hook)"</span><br><span class="line">conda activate base</span><br><span class="line">conda init</span><br></pre></td></tr></table></figure></div>
 
 <ul>
 <li>创建 Conda 环境</li>
@@ -5427,45 +5412,19 @@
 <ul>
 <li>激活环境：</li>
 </ul>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda activate my_env</span><br></pre></td></tr></table></figure></div>
-
-
-  <div class="note-large blue">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <p>提示</p>
-
-    </div>
-    <div class="notel-content">
-      <p>如果提示Run ‘mamba init’ to be able to run mamba activate/deactivate，执行之后无法激活</p>
-<p><code>source ~/.zshrc</code>重新加载配置之后，再激活</p>
-
-    </div>
-  </div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">mamba init</span><br><span class="line">source ~/.bashrc</span><br><span class="line">mamba activate my_env</span><br></pre></td></tr></table></figure></div>
 
 <ul>
 <li>使用 mamba 安装软件包（更快）：</li>
 </ul>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">mamba install numpy pandas</span><br></pre></td></tr></table></figure></div>
+<p>安装时候仅仅将原先conda都位置改为mamba即可，包括从bioconda中安装软件</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">mamba install numpy pandas</span><br><span class="line">mamba install bioconda::nucdiff</span><br></pre></td></tr></table></figure></div>
 
-<ul>
-<li>更新软件包</li>
-</ul>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">mamba update numpy</span><br></pre></td></tr></table></figure></div>
+<h3 id="环境问题，回滚conda状态"><a href="#环境问题，回滚conda状态" class="headerlink" title="环境问题，回滚conda状态"></a>环境问题，回滚conda状态</h3><p>把所有包装在base环境中，后续易出现冲突问题。解决方法，环境隔离安装！！！！！</p>
+<p>这里选择0是为了展示回滚到什么都没安装的状态</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda list --revisions</span><br><span class="line">conda install --rev 0</span><br><span class="line"></span><br><span class="line"># 清理所有所有未在当前环境中使用的包、索引缓存及下载的临时文件</span><br><span class="line">conda clean --all</span><br></pre></td></tr></table></figure></div>
 
-<ul>
-<li>查看已安装的软件包</li>
-</ul>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>删除软件包</li>
-</ul>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">mamba remove numpy</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>卸载：</li>
-</ul>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 卸载 Miniforge</span><br><span class="line">rm -rf ~/miniforge3</span><br><span class="line"></span><br><span class="line"># 删除 Conda 和 Mamba 配置文件</span><br><span class="line">rm -rf ~/.conda ~/.mamba ~/.config/conda ~/.config/mamba</span><br></pre></td></tr></table></figure></div>
+<p>最好一个项目一块用的软件包，依赖放在一个环境里进行环境隔离。</p>
 ]]></content>
       <categories>
         <category>Genomics</category>
