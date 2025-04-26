@@ -36,7 +36,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-03-13T11:57:00.000Z">
-<meta property="article:modified_time" content="2025-03-30T07:50:23.922Z">
+<meta property="article:modified_time" content="2025-04-19T06:54:59.464Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="course">
 <meta property="article:tag" content="Biomedical Statistics">
@@ -423,7 +423,7 @@ mjx-container[display="true"] + br {
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">45</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">46</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -431,7 +431,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">46</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">47</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -480,8 +480,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-03-30 15:50:23</span>
-            <span class="mobile">2025-03-30 15:50:23</span>
+            <span class="desktop">2025-04-19 14:54:59</span>
+            <span class="mobile">2025-04-19 14:54:59</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -523,12 +523,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>5.5k Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>6.5k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>20 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>23 Mins</span>
         </span>
     
     
@@ -1188,6 +1188,75 @@ mjx-container[display="true"] + br {
 </ol>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Bonferroni校正（控制FWER）</span><br><span class="line">adjusted_bonferroni &lt;- p.adjust(p_values, method = "bonferroni")</span><br><span class="line"></span><br><span class="line"># Benjamini-Hochberg校正（控制FDR）</span><br><span class="line">adjusted_bh &lt;- p.adjust(p_values, method = "BH")</span><br></pre></td></tr></table></figure></div>
 
+<h3 id="ANOVA"><a href="#ANOVA" class="headerlink" title="ANOVA"></a>ANOVA</h3><p>方差分析（ANOVA）是一种用于比较多个组间均值差异是否显著的统计方法，其核心思想是通过分解数据的总变异，判断组间差异是否显著大于随机误差。方差分析优于两组比较的<strong>T检验</strong>之处，在于后者会<strong>导致多重比较（multiple comparisons）的问题</strong>而致使第一类错误（Type one error）的机会增高，因此比较多组平均数是否有差异则是方差分析的主要命题。</p>
+<h4 id="Principle"><a href="#Principle" class="headerlink" title="Principle"></a>Principle</h4><ol>
+<li><strong>核心思想</strong></li>
+</ol>
+<ul>
+<li>将总变异分解为 <strong>组间变异</strong>（不同组之间的差异）和 <strong>组内变异</strong>（组内随机误差）。</li>
+<li>比较组间变异与组内变异的比值（F统计量），若比值显著大于1，则认为组间存在显著差异。</li>
+</ul>
+<ol start="2">
+<li><strong>假设条件</strong></li>
+</ol>
+<ul>
+<li><strong>正态性</strong>：各组数据服从正态分布。</li>
+<li><strong>方差齐性</strong>：各组方差相等。</li>
+<li><strong>独立性</strong>：观测值相互独立。</li>
+</ul>
+<h4 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h4><ol>
+<li><p>固定效应模式（Fixed-effects models）</p>
+<p>用于方差分析模型中所考虑的因子为固定的情况，换言之，其所感兴趣的因子是来自于特定的范围，例如要比较五种不同的汽车销售量的差异，感兴趣的因子为五种不同的汽车，反因变量为销售量，该命题即限定了特定范围，因此模型的推论结果也将全部着眼在五种汽车的销售差异上，故此种状况下的因子便称为固定效应。</p>
+</li>
+<li><p>随机效应模式（Random-effects models）</p>
+<p>不同于固定效应模式中的因子特定性，在随机效应中所考量的因子是来自于所有可能的母群体中的一组样本，因子方差分析所推论的并非着眼在所选定的因子上，而是推论到因子背后的母群体，例如，借由一间拥有全部车厂种类的二手车公司，从所有车厂中随机挑选5种车厂品牌，用于比较其销售量的差异，最后推论到这间二手公司的销售状况。因此在随机效应模型下，研究者所关心的并非局限在所选定的因子上，而是希望借由这些因子推论背后的母群体特征。</p>
+</li>
+<li><p>混合效应模式（Mixed-effects models）</p>
+<p>此种混合效应绝对不会出现在单因子方差分析中，当双因子或多因子方差分析同时存在固定效应与随机效应时，此种模型便是典型的混合型模式。</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">特征</th>
+<th align="left">固定效应模型</th>
+<th align="left">随机效应模型</th>
+<th align="left">混合效应模型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>因子类型</strong></td>
+<td align="left">特定选择的有限类别</td>
+<td align="left">随机抽取的样本类别</td>
+<td align="left">同时包含固定和随机因子</td>
+</tr>
+<tr>
+<td align="left"><strong>推论目标</strong></td>
+<td align="left">仅针对所选类别</td>
+<td align="left">推广到因子背后的群体</td>
+<td align="left">固定因子直接比较，随机因子推广</td>
+</tr>
+<tr>
+<td align="left"><strong>关注点</strong></td>
+<td align="left">组间均值差异</td>
+<td align="left">因子方差贡献</td>
+<td align="left">固定效应系数 + 随机效应方差</td>
+</tr>
+<tr>
+<td align="left"><strong>R函数</strong></td>
+<td align="left"><code>aov()</code>, <code>lm()</code></td>
+<td align="left"><code>lmer()</code>（lme4包）</td>
+<td align="left"><code>lmer()</code>（lme4包）</td>
+</tr>
+<tr>
+<td align="left"><strong>示例场景</strong></td>
+<td align="left">比较三种药物的疗效</td>
+<td align="left">评估不同学校的方差贡献</td>
+<td align="left">药物（固定） + 医院（随机）</td>
+</tr>
+</tbody></table>
+<h4 id="Two-way-ANOVA"><a href="#Two-way-ANOVA" class="headerlink" title="Two-way ANOVA"></a>Two-way ANOVA</h4><p>在许多情境下，某现象并非仅受单一因子的影响，甚至存在另一个因子的效应，例如要比较五个都市的空气污染总指针差异，除了都市别的因素之外，还必须考量汽机车密度的因素，在这样的情境下，都市别与汽机车密度可能就存在着某种效应影响着空气污染的多寡，因此在双因子方差分析中，除了考量双因子彼此的效应之外，也可能存在因子之间的联合效应，也就是因子间的交互作用（interaction），这也使得双因子方差分析变的比较复杂。（ <strong>两个自变量（因子）</strong> 对 <strong>一个连续因变量</strong> 的影响，同时考察两个因子之间的 <strong>交互作用</strong>）</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/img/img-statistics/10.png"></p>
 
 		</div>
 
@@ -1202,7 +1271,7 @@ mjx-container[display="true"] + br {
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-03-30 15:50:23
+                    :</strong> 2025-04-19 14:54:59
             </li>
         
         <li>
@@ -1335,7 +1404,7 @@ mjx-container[display="true"] + br {
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
 		<div class="page-title">Biomedical Statistics</div>
-		<ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%8F%98%E5%BC%82%E6%8F%8F%E8%BF%B0"><span class="nav-text">数据变异描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%88%86%E5%B8%83"><span class="nav-text">常见分布</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83"><span class="nav-text">正态分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Student-t-Distribution"><span class="nav-text">Student t Distribution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%CF%872%E5%8D%A1%E6%96%B9%E5%88%86%E5%B8%83"><span class="nav-text">χ2卡方分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#F-%E5%88%86%E5%B8%83"><span class="nav-text">F 分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83-%E7%A6%BB%E6%95%A3%E5%88%86%E5%B8%83"><span class="nav-text">二项分布(离散分布)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83%EF%BC%88Poisson-approximation%EF%BC%89"><span class="nav-text">泊松分布（Poisson approximation）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83"><span class="nav-text">超几何分布</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4"><span class="nav-text">置信区间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%85%AC%E5%BC%8F%EF%BC%88%E5%8E%9F%E5%9B%A0-%E2%80%93-%E7%BB%93%E6%9E%9C%EF%BC%89"><span class="nav-text">贝叶斯公式（原因 –&gt; 结果）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="nav-text">假设检验</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C%EF%BC%88parametric-test%EF%BC%89"><span class="nav-text">参数检验（parametric test）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%95%E6%A0%B7%E6%9C%AC%E5%9D%87%E5%80%BC%E6%A3%80%E9%AA%8C"><span class="nav-text">单样本均值检验</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%80%A7%E8%AF%95%E9%AA%8C"><span class="nav-text">随机性试验</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%95%E6%A0%B7%E6%9C%AC%E6%AF%94%E4%BE%8B%E6%A3%80%E9%AA%8C"><span class="nav-text">单样本比例检验</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%8C%E6%A0%B7%E6%9C%ACT%E6%A3%80%E9%AA%8C%EF%BC%88%E5%9D%87%E5%80%BC%E5%B7%AE%E5%BC%82%EF%BC%89"><span class="nav-text">双样本T检验（均值差异）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%8C%E6%A0%B7%E6%9C%ACF%E6%A3%80%E9%AA%8C%EF%BC%88%E6%96%B9%E5%B7%AE%E9%BD%90%E6%80%A7%E6%A3%80%E9%AA%8C%EF%BC%89"><span class="nav-text">双样本F检验（方差齐性检验）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%85%8D%E5%AF%B9%E6%A0%B7%E6%9C%ACt%E6%A3%80%E9%AA%8C"><span class="nav-text">配对样本t检验</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%8A%9F%E6%95%88%EF%BC%88Power%EF%BC%89%E4%B8%8E%E6%A0%B7%E6%9C%AC%E9%87%8F%EF%BC%88Sample-Size%EF%BC%89"><span class="nav-text">统计功效（Power）与样本量（Sample Size）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%8D%95%E6%A0%B7%E6%9C%AC"><span class="nav-text">单样本</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%8F%8C%E6%A0%B7%E6%9C%AC"><span class="nav-text">双样本</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C%EF%BC%88Non-parametric-test%EF%BC%89"><span class="nav-text">非参数检验（Non-parametric test）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Sign-test"><span class="nav-text">Sign test</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Wilcox-signed-rank-test"><span class="nav-text">Wilcox signed rank test</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Wilcox-rank-sum-test"><span class="nav-text">Wilcox rank sum test</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Multiple-test-problem"><span class="nav-text">Multiple test problem</span></a></li></ol></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%8F%98%E5%BC%82%E6%8F%8F%E8%BF%B0"><span class="nav-text">数据变异描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%88%86%E5%B8%83"><span class="nav-text">常见分布</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83"><span class="nav-text">正态分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Student-t-Distribution"><span class="nav-text">Student t Distribution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%CF%872%E5%8D%A1%E6%96%B9%E5%88%86%E5%B8%83"><span class="nav-text">χ2卡方分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#F-%E5%88%86%E5%B8%83"><span class="nav-text">F 分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83-%E7%A6%BB%E6%95%A3%E5%88%86%E5%B8%83"><span class="nav-text">二项分布(离散分布)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83%EF%BC%88Poisson-approximation%EF%BC%89"><span class="nav-text">泊松分布（Poisson approximation）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83"><span class="nav-text">超几何分布</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4"><span class="nav-text">置信区间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%85%AC%E5%BC%8F%EF%BC%88%E5%8E%9F%E5%9B%A0-%E2%80%93-%E7%BB%93%E6%9E%9C%EF%BC%89"><span class="nav-text">贝叶斯公式（原因 –&gt; 结果）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="nav-text">假设检验</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C%EF%BC%88parametric-test%EF%BC%89"><span class="nav-text">参数检验（parametric test）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%95%E6%A0%B7%E6%9C%AC%E5%9D%87%E5%80%BC%E6%A3%80%E9%AA%8C"><span class="nav-text">单样本均值检验</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%80%A7%E8%AF%95%E9%AA%8C"><span class="nav-text">随机性试验</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%95%E6%A0%B7%E6%9C%AC%E6%AF%94%E4%BE%8B%E6%A3%80%E9%AA%8C"><span class="nav-text">单样本比例检验</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%8C%E6%A0%B7%E6%9C%ACT%E6%A3%80%E9%AA%8C%EF%BC%88%E5%9D%87%E5%80%BC%E5%B7%AE%E5%BC%82%EF%BC%89"><span class="nav-text">双样本T检验（均值差异）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%8C%E6%A0%B7%E6%9C%ACF%E6%A3%80%E9%AA%8C%EF%BC%88%E6%96%B9%E5%B7%AE%E9%BD%90%E6%80%A7%E6%A3%80%E9%AA%8C%EF%BC%89"><span class="nav-text">双样本F检验（方差齐性检验）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%85%8D%E5%AF%B9%E6%A0%B7%E6%9C%ACt%E6%A3%80%E9%AA%8C"><span class="nav-text">配对样本t检验</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%8A%9F%E6%95%88%EF%BC%88Power%EF%BC%89%E4%B8%8E%E6%A0%B7%E6%9C%AC%E9%87%8F%EF%BC%88Sample-Size%EF%BC%89"><span class="nav-text">统计功效（Power）与样本量（Sample Size）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%8D%95%E6%A0%B7%E6%9C%AC"><span class="nav-text">单样本</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%8F%8C%E6%A0%B7%E6%9C%AC"><span class="nav-text">双样本</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C%EF%BC%88Non-parametric-test%EF%BC%89"><span class="nav-text">非参数检验（Non-parametric test）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Sign-test"><span class="nav-text">Sign test</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Wilcox-signed-rank-test"><span class="nav-text">Wilcox signed rank test</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Wilcox-rank-sum-test"><span class="nav-text">Wilcox rank sum test</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Multiple-test-problem"><span class="nav-text">Multiple test problem</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ANOVA"><span class="nav-text">ANOVA</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Principle"><span class="nav-text">Principle</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Type"><span class="nav-text">Type</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Two-way-ANOVA"><span class="nav-text">Two-way ANOVA</span></a></li></ol></li></ol>
 
 	</div>
 </div>
@@ -1362,11 +1431,11 @@ mjx-container[display="true"] + br {
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        46 posts in total
+                        47 posts in total
                     </span>
                     
                         <span>
-                            74.7k words in total
+                            78.1k words in total
                         </span>
                     
                 </p>

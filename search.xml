@@ -1017,6 +1017,7 @@
 <li><strong>:13,57d - 删除15到57行</strong></li>
 <li>:wq - 将更改写入文件并退出。是的，没错，这是一个<strong>冒号</strong>，后面跟着 wq 和<code>&lt;ENTER&gt;</code>。</li>
 <li>:q! - 不要对文件进行更改并退出。</li>
+<li>G: 光标移动到最下面</li>
 </ul>
 <h2 id="Linux文件内容查看"><a href="#Linux文件内容查看" class="headerlink" title="Linux文件内容查看"></a>Linux文件内容查看</h2><ol>
 <li>cat 由第一行开始显示文件内容</li>
@@ -6078,6 +6079,75 @@
 </ol>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Bonferroni校正（控制FWER）</span><br><span class="line">adjusted_bonferroni &lt;- p.adjust(p_values, method = "bonferroni")</span><br><span class="line"></span><br><span class="line"># Benjamini-Hochberg校正（控制FDR）</span><br><span class="line">adjusted_bh &lt;- p.adjust(p_values, method = "BH")</span><br></pre></td></tr></table></figure></div>
 
+<h3 id="ANOVA"><a href="#ANOVA" class="headerlink" title="ANOVA"></a>ANOVA</h3><p>方差分析（ANOVA）是一种用于比较多个组间均值差异是否显著的统计方法，其核心思想是通过分解数据的总变异，判断组间差异是否显著大于随机误差。方差分析优于两组比较的<strong>T检验</strong>之处，在于后者会<strong>导致多重比较（multiple comparisons）的问题</strong>而致使第一类错误（Type one error）的机会增高，因此比较多组平均数是否有差异则是方差分析的主要命题。</p>
+<h4 id="Principle"><a href="#Principle" class="headerlink" title="Principle"></a>Principle</h4><ol>
+<li><strong>核心思想</strong></li>
+</ol>
+<ul>
+<li>将总变异分解为 <strong>组间变异</strong>（不同组之间的差异）和 <strong>组内变异</strong>（组内随机误差）。</li>
+<li>比较组间变异与组内变异的比值（F统计量），若比值显著大于1，则认为组间存在显著差异。</li>
+</ul>
+<ol start="2">
+<li><strong>假设条件</strong></li>
+</ol>
+<ul>
+<li><strong>正态性</strong>：各组数据服从正态分布。</li>
+<li><strong>方差齐性</strong>：各组方差相等。</li>
+<li><strong>独立性</strong>：观测值相互独立。</li>
+</ul>
+<h4 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h4><ol>
+<li><p>固定效应模式（Fixed-effects models）</p>
+<p>用于方差分析模型中所考虑的因子为固定的情况，换言之，其所感兴趣的因子是来自于特定的范围，例如要比较五种不同的汽车销售量的差异，感兴趣的因子为五种不同的汽车，反因变量为销售量，该命题即限定了特定范围，因此模型的推论结果也将全部着眼在五种汽车的销售差异上，故此种状况下的因子便称为固定效应。</p>
+</li>
+<li><p>随机效应模式（Random-effects models）</p>
+<p>不同于固定效应模式中的因子特定性，在随机效应中所考量的因子是来自于所有可能的母群体中的一组样本，因子方差分析所推论的并非着眼在所选定的因子上，而是推论到因子背后的母群体，例如，借由一间拥有全部车厂种类的二手车公司，从所有车厂中随机挑选5种车厂品牌，用于比较其销售量的差异，最后推论到这间二手公司的销售状况。因此在随机效应模型下，研究者所关心的并非局限在所选定的因子上，而是希望借由这些因子推论背后的母群体特征。</p>
+</li>
+<li><p>混合效应模式（Mixed-effects models）</p>
+<p>此种混合效应绝对不会出现在单因子方差分析中，当双因子或多因子方差分析同时存在固定效应与随机效应时，此种模型便是典型的混合型模式。</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">特征</th>
+<th align="left">固定效应模型</th>
+<th align="left">随机效应模型</th>
+<th align="left">混合效应模型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>因子类型</strong></td>
+<td align="left">特定选择的有限类别</td>
+<td align="left">随机抽取的样本类别</td>
+<td align="left">同时包含固定和随机因子</td>
+</tr>
+<tr>
+<td align="left"><strong>推论目标</strong></td>
+<td align="left">仅针对所选类别</td>
+<td align="left">推广到因子背后的群体</td>
+<td align="left">固定因子直接比较，随机因子推广</td>
+</tr>
+<tr>
+<td align="left"><strong>关注点</strong></td>
+<td align="left">组间均值差异</td>
+<td align="left">因子方差贡献</td>
+<td align="left">固定效应系数 + 随机效应方差</td>
+</tr>
+<tr>
+<td align="left"><strong>R函数</strong></td>
+<td align="left"><code>aov()</code>, <code>lm()</code></td>
+<td align="left"><code>lmer()</code>（lme4包）</td>
+<td align="left"><code>lmer()</code>（lme4包）</td>
+</tr>
+<tr>
+<td align="left"><strong>示例场景</strong></td>
+<td align="left">比较三种药物的疗效</td>
+<td align="left">评估不同学校的方差贡献</td>
+<td align="left">药物（固定） + 医院（随机）</td>
+</tr>
+</tbody></table>
+<h4 id="Two-way-ANOVA"><a href="#Two-way-ANOVA" class="headerlink" title="Two-way ANOVA"></a>Two-way ANOVA</h4><p>在许多情境下，某现象并非仅受单一因子的影响，甚至存在另一个因子的效应，例如要比较五个都市的空气污染总指针差异，除了都市别的因素之外，还必须考量汽机车密度的因素，在这样的情境下，都市别与汽机车密度可能就存在着某种效应影响着空气污染的多寡，因此在双因子方差分析中，除了考量双因子彼此的效应之外，也可能存在因子之间的联合效应，也就是因子间的交互作用（interaction），这也使得双因子方差分析变的比较复杂。（ <strong>两个自变量（因子）</strong> 对 <strong>一个连续因变量</strong> 的影响，同时考察两个因子之间的 <strong>交互作用</strong>）</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/img/img-statistics/10.png"></p>
 ]]></content>
       <categories>
         <category>Heredity and evolution</category>
@@ -7343,6 +7413,165 @@
         <tag>course</tag>
         <tag>Hardy-Weinberg</tag>
         <tag>Population Genetic Structure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SV calling</title>
+    <url>/2025/04/26/SV%20calling/</url>
+    <content><![CDATA[<p>通过比较基因组学，从组装好的contig或者reads中鉴定出SV (structure variation) 是进行sv鉴定的两条经典途径。2024年8月，中山大学李淼新团队，基于三代测序数据对53个SV检测的流程进行了评估主流SVcalling流程，并指出，将不同calling得到的vcf文件进行合并可以有效的提升鉴定的精度。</p>
+<h2 id="Data-collation"><a href="#Data-collation" class="headerlink" title="Data collation"></a>Data collation</h2><p>近年以来的sv calling。加上传统的流程，进行实验以下流程进行calling。之后使用SURVIVOR进行变异合并，其中根据前人的经验，可以将鉴定出的vcf文件分裂为INS和DEL，之后INS使用50 2 1 1 0 50的参数，而DEL使用0.5 2 1 1 0 50。（之后的工作focus这两种变异）</p>
+<ul>
+<li>pbmm2+pbsv</li>
+<li>minimap2+cutesv2</li>
+<li>minimap2+svim-asm</li>
+<li>minimap2+sniffles2</li>
+<li>winnowmap+svision-pro</li>
+<li>winnowmap+sniffles2</li>
+<li>minimap2+syri</li>
+</ul>
+<p><img lazyload="" src="/images/loading.svg" data-src="/img/img-organelle_assemble/4.png"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/img/img-organelle_assemble/5.png"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/img/img-organelle_assemble/6.png"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/img/img-organelle_assemble/7.png"></p>
+<h2 id="Structural-Variation"><a href="#Structural-Variation" class="headerlink" title="Structural Variation"></a>Structural Variation</h2><p>基因组结构变异（Structural Variations, SVs）是指基因组中长度大于50 bp的大规模变异，主要包括缺失（Deletion）、重复（Duplication）、倒位（Inversion）、插入（Insertion）、易位（Translocation）等</p>
+<p>同时，在结果的vcf文件中，有的变异被标注为BND (breakend)，其代表为<strong>染色体断裂或易位</strong>（Inter-chromosomal Translocation）或<strong>染色体内复杂重排</strong>（Intra-chromosomal Complex Rearrangement）事件的变异类型，当变异被鉴定为 <strong>BND</strong> 时，通常表示该变异涉及两个染色体之间的断点连接或同一染色体上不连续断点的重新连接。</p>
+<p>注意，svision-pro calling所鉴定到的sv中存在</p>
+<p>SVTYPE=INS+idDUP+BND+INS</p>
+<p>SVTYPE=INS+idDUP+DEL</p>
+<p>SVTYPE=INS+idDUP+INS+idlDUP+DEL</p>
+<p>这样的鉴定结果，甚至存在DEL和INS这两种相斥的结果存在，不知道为什么。怀疑是这个方法导致的，本质是将比对结果转化为图像，之后使用GNN神经网络模型进行变异鉴定。</p>
+<h2 id="Useful-tools"><a href="#Useful-tools" class="headerlink" title="Useful tools"></a>Useful tools</h2><ul>
+<li>vcf鉴定变异类型和数量的统计</li>
+</ul>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">grep -v <span class="string">'^#'</span> input.vcf | <span class="built_in">cut</span> -f8 | grep -o <span class="string">'SVTYPE=[^;]*'</span> | <span class="built_in">sort</span> | <span class="built_in">uniq</span> -c</span><br><span class="line"></span><br><span class="line"><span class="comment"># 针对svision-pro结果存在复合现象，可以吧+替换之后统计为回车键</span></span><br><span class="line">grep -v <span class="string">'^#'</span> Nip_hifi_asm.svision_pro_v2.4.s1.vcf | <span class="built_in">cut</span> -f8 | grep -o <span class="string">'SVTYPE=[^;]*'</span> | sed <span class="string">'s/SVTYPE=//'</span> | <span class="built_in">tr</span> <span class="string">'+'</span> <span class="string">'\n'</span> | <span class="built_in">sort</span> | <span class="built_in">uniq</span> -c</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>从vcf文件中提取中其中某种/几种类型的变异为一个新vcf文件</li>
+</ul>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">bcftools view -i <span class="string">'SVTYPE="INS" || SVTYPE="DEL"'</span> input.vcf -Oz -o filtered_ins_del.vcf.gz</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>提取出不同变异的大小，之后可以用R画频率分布直方图，直观展示大小分布</li>
+</ul>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">bcftools query -i 'SVTYPE="DEL"' -f "%SVLEN\n" input.vcf | </span><br><span class="line">awk '{print sqrt($1^2)}' &gt; input_del.txt</span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="R"><figure class="iseeu highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">del <span class="operator">&lt;-</span> read.table<span class="punctuation">(</span><span class="string">"deletions.txt"</span><span class="punctuation">)</span></span><br><span class="line">ins <span class="operator">&lt;-</span> read.table<span class="punctuation">(</span><span class="string">"insertion.txt"</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看基本统计</span></span><br><span class="line">summary<span class="punctuation">(</span>del<span class="punctuation">)</span></span><br><span class="line">summary<span class="punctuation">(</span>ins<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">library<span class="punctuation">(</span>ggplot2<span class="punctuation">)</span></span><br><span class="line">colnames<span class="punctuation">(</span>del<span class="punctuation">)</span> <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">'value'</span><span class="punctuation">)</span></span><br><span class="line">colnames<span class="punctuation">(</span>ins<span class="punctuation">)</span> <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">'value'</span><span class="punctuation">)</span></span><br><span class="line">del<span class="operator">$</span>type <span class="operator">&lt;-</span> <span class="string">"Deletion"</span></span><br><span class="line">ins<span class="operator">$</span>type <span class="operator">&lt;-</span> <span class="string">"Insertion"</span></span><br><span class="line">combined_data <span class="operator">&lt;-</span> rbind<span class="punctuation">(</span>del<span class="punctuation">,</span> ins<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算 x 轴的统一范围 (覆盖所有数据点的最小值到最大值)</span></span><br><span class="line">x_limits <span class="operator">&lt;-</span> <span class="built_in">range</span><span class="punctuation">(</span>combined_data<span class="operator">$</span>value<span class="punctuation">,</span> na.rm <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">)</span> </span><br><span class="line">bin_width <span class="operator">&lt;-</span> diff<span class="punctuation">(</span>x_limits<span class="punctuation">)</span> <span class="operator">/</span> <span class="number">20</span> <span class="comment"># 假设分20个 bin</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算合并数据的直方图数据来找到最高频数</span></span><br><span class="line"><span class="comment"># 使用 count() 结合 cut() 来计算每个 bin 的频数</span></span><br><span class="line"><span class="comment"># 或者更简单地，先构建一个ggplot对象，然后用ggplot_build获取数据</span></span><br><span class="line">p_hist_temp <span class="operator">&lt;-</span> ggplot<span class="punctuation">(</span>combined_data<span class="punctuation">,</span> aes<span class="punctuation">(</span>x <span class="operator">=</span> value<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  geom_histogram<span class="punctuation">(</span>binwidth <span class="operator">=</span> bin_width<span class="punctuation">)</span></span><br><span class="line">hist_build <span class="operator">&lt;-</span> ggplot_build<span class="punctuation">(</span>p_hist_temp<span class="punctuation">)</span><span class="operator">$</span>data<span class="punctuation">[[</span><span class="number">1</span><span class="punctuation">]</span><span class="punctuation">]</span></span><br><span class="line">max_freq <span class="operator">&lt;-</span> <span class="built_in">max</span><span class="punctuation">(</span>hist_build<span class="operator">$</span>count<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置直方图 y 轴的范围 (从0到最高频数，留一点顶部空间)</span></span><br><span class="line">y_limits_freq <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">0</span><span class="punctuation">,</span> max_freq<span class="punctuation">)</span> <span class="comment"># 乘以1.1留出10%的额外空间</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># --- 使用统一的轴范围绘制图形 ---</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制 deletions 的频率分布直方图 (使用统一的轴范围)</span></span><br><span class="line">ggplot<span class="punctuation">(</span>del<span class="punctuation">,</span> aes<span class="punctuation">(</span>x <span class="operator">=</span> value<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  geom_histogram<span class="punctuation">(</span>binwidth <span class="operator">=</span> bin_width<span class="punctuation">,</span> fill <span class="operator">=</span> <span class="string">"skyblue"</span><span class="punctuation">,</span> color <span class="operator">=</span> <span class="string">"black"</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  labs<span class="punctuation">(</span>title <span class="operator">=</span> <span class="string">"Frequency Distribution of Deletions"</span><span class="punctuation">,</span></span><br><span class="line">       x <span class="operator">=</span> <span class="string">"Value"</span><span class="punctuation">,</span></span><br><span class="line">       y <span class="operator">=</span> <span class="string">"Frequency"</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  theme_minimal<span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  coord_cartesian<span class="punctuation">(</span>xlim <span class="operator">=</span> x_limits<span class="punctuation">,</span> ylim <span class="operator">=</span> y_limits_freq<span class="punctuation">)</span> <span class="comment"># &lt;-- 应用统一的轴范围</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制 insertions 的频率分布直方图 (使用统一的轴范围)</span></span><br><span class="line">ggplot<span class="punctuation">(</span>ins<span class="punctuation">,</span> aes<span class="punctuation">(</span>x <span class="operator">=</span> value<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  geom_histogram<span class="punctuation">(</span>binwidth <span class="operator">=</span> bin_width<span class="punctuation">,</span> fill <span class="operator">=</span> <span class="string">"lightcoral"</span><span class="punctuation">,</span> color <span class="operator">=</span> <span class="string">"black"</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  labs<span class="punctuation">(</span>title <span class="operator">=</span> <span class="string">"Frequency Distribution of Insertions"</span><span class="punctuation">,</span></span><br><span class="line">       x <span class="operator">=</span> <span class="string">"Value"</span><span class="punctuation">,</span></span><br><span class="line">       y <span class="operator">=</span> <span class="string">"Frequency"</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  theme_minimal<span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  coord_cartesian<span class="punctuation">(</span>xlim <span class="operator">=</span> x_limits<span class="punctuation">,</span> ylim <span class="operator">=</span> y_limits_freq<span class="punctuation">)</span> <span class="comment"># &lt;-- 应用统一的轴范围</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制两组数据的频率分布直方图在同一张图上 (使用统一的轴范围)</span></span><br><span class="line">ggplot<span class="punctuation">(</span>combined_data<span class="punctuation">,</span> aes<span class="punctuation">(</span>x <span class="operator">=</span> value<span class="punctuation">,</span> fill <span class="operator">=</span> type<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  geom_histogram<span class="punctuation">(</span>binwidth <span class="operator">=</span> bin_width<span class="punctuation">,</span> color <span class="operator">=</span> <span class="string">"black"</span><span class="punctuation">,</span> alpha <span class="operator">=</span> <span class="number">0.7</span><span class="punctuation">,</span> position <span class="operator">=</span> <span class="string">"identity"</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  labs<span class="punctuation">(</span>title <span class="operator">=</span> <span class="string">"Frequency Distribution of Deletions and Insertions"</span><span class="punctuation">,</span></span><br><span class="line">       x <span class="operator">=</span> <span class="string">"Value"</span><span class="punctuation">,</span></span><br><span class="line">       y <span class="operator">=</span> <span class="string">"Frequency"</span><span class="punctuation">,</span></span><br><span class="line">       fill <span class="operator">=</span> <span class="string">"Type"</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  theme_minimal<span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  coord_cartesian<span class="punctuation">(</span>xlim <span class="operator">=</span> x_limits<span class="punctuation">,</span> ylim <span class="operator">=</span> y_limits_freq<span class="punctuation">)</span> <span class="comment"># &lt;-- 应用统一的轴范围</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="File-format"><a href="#File-format" class="headerlink" title="File format"></a>File format</h2><h3 id="VCF"><a href="#VCF" class="headerlink" title="VCF"></a>VCF</h3><p><strong>VCF（Variant Call Format）</strong> 是存储基因变异信息（如 SNP、INDEL、结构变异 SV）的标准格式，由<strong>头文件（Header）</strong>和<strong>数据行（Data Lines）</strong>组成。</p>
+<ul>
+<li><strong>核心功能</strong>：描述样本相对于参考基因组的变异信息（类型、位置、基因型等）。</li>
+<li><strong>适用场景</strong>：变异检测结果共享、下游分析（如过滤、注释、统计）。</li>
+</ul>
+<h4 id="头文件解析（Header）"><a href="#头文件解析（Header）" class="headerlink" title="头文件解析（Header）"></a>头文件解析（Header）</h4><p>头文件以 <code>##</code> 开头，定义文件格式、来源、参考基因组、变异类型等信息。以下是示例中各部分的详细说明：</p>
+<h5 id="1-基础信息"><a href="#1-基础信息" class="headerlink" title="(1) 基础信息"></a><strong>(1) 基础信息</strong></h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">##fileformat=VCFv4.2                   # VCF 版本为 4.2</span><br><span class="line">##source=cuteSV-2.1.2                  # 生成文件的工具及版本</span><br><span class="line">##fileDate=2025-04-18 13:18:50 5-CST   # 文件生成时间</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="2-参考基因组（Contig）"><a href="#2-参考基因组（Contig）" class="headerlink" title="(2) 参考基因组（Contig）"></a><strong>(2) 参考基因组（Contig）</strong></h5><p>定义染色体的名称（<code>ID</code>）和长度（<code>length</code>）：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">##contig=&lt;ID=Chr1,length=43929697&gt;</span><br><span class="line">##contig=&lt;ID=Chr2,length=36447916&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><strong>作用</strong>：明确参考基因组的染色体结构，用于坐标定位。</li>
+</ul>
+<h5 id="3-变异类型（ALT）"><a href="#3-变异类型（ALT）" class="headerlink" title="(3) 变异类型（ALT）"></a><strong>(3) 变异类型（ALT）</strong></h5><p>描述不同结构变异类型（<code>INS</code>, <code>DEL</code>, <code>DUP</code>, <code>INV</code>, <code>BND</code>）：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">##ALT=&lt;ID=INS,Description="Insertion of novel sequence relative to the reference"&gt;</span><br><span class="line">##ALT=&lt;ID=DEL,Description="Deletion relative to the reference"&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><strong>关键字段</strong>：<code>ID</code> 表示变异类型缩写，<code>Description</code> 为详细解释。</li>
+</ul>
+<h5 id="4-信息字段（INFO）"><a href="#4-信息字段（INFO）" class="headerlink" title="(4) 信息字段（INFO）"></a><strong>(4) 信息字段（INFO）</strong></h5><p>定义 <code>INFO</code> 列的字段含义，用于描述变异的属性：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">##INFO=&lt;ID=SVTYPE,Number=1,Type=String,Description="Type of structural variant"&gt;</span><br><span class="line">##INFO=&lt;ID=SVLEN,Number=1,Type=Integer,Description="Difference in length between REF and ALT alleles"&gt;</span><br><span class="line">##INFO=&lt;ID=END,Number=1,Type=Integer,Description="End position of the variant"&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><strong>关键参数</strong>：<ul>
+<li><code>ID</code>：字段名称（如 <code>SVTYPE</code>）。</li>
+<li><code>Number</code>：值的数量（<code>1</code> 表示单个值，<code>.</code> 表示数量不定）。</li>
+<li><code>Type</code>：数据类型（<code>String</code>, <code>Integer</code>, <code>Float</code>, <code>Flag</code>）。</li>
+<li><code>Description</code>：字段描述。</li>
+</ul>
+</li>
+</ul>
+<h5 id="5-过滤条件（FILTER）"><a href="#5-过滤条件（FILTER）" class="headerlink" title="(5) 过滤条件（FILTER）"></a><strong>(5) 过滤条件（FILTER）</strong></h5><p>定义 <code>FILTER</code> 列的过滤标签：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">##FILTER=&lt;ID=q5,Description="Quality below 5"&gt;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><strong>用途</strong>：标记低质量变异（如 <code>q5</code> 表示质量值低于 5 的变异被过滤）。</li>
+</ul>
+<h5 id="6-格式字段（FORMAT）"><a href="#6-格式字段（FORMAT）" class="headerlink" title="(6) 格式字段（FORMAT）"></a><strong>(6) 格式字段（FORMAT）</strong></h5><p>定义 <code>FORMAT</code> 列及样本列的基因型字段格式：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">##FORMAT=&lt;ID=GT,Number=1,Type=String,Description="Genotype"&gt;</span><br><span class="line">##FORMAT=&lt;ID=DR,Number=1,Type=Integer,Description="# High-quality reference reads"&gt;</span><br><span class="line">##FORMAT=&lt;ID=DV,Number=1,Type=Integer,Description="# High-quality variant reads"&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><strong>示例</strong>：<code>GT:DR:DV</code> 表示每个样本的基因型、参考支持读数和变异支持读数。</li>
+</ul>
+<h4 id="数据行解析（Data-Lines）"><a href="#数据行解析（Data-Lines）" class="headerlink" title="数据行解析（Data Lines）"></a>数据行解析（Data Lines）</h4><p>以 <code>#CHROM</code> 开头的行定义列标题，后续每行为一个变异记录：</p>
+<h5 id="1-列标题"><a href="#1-列标题" class="headerlink" title="(1) 列标题"></a><strong>(1) 列标题</strong></h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NULL</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><strong>核心列</strong>：<ul>
+<li><code>#CHROM</code>：染色体名称（如 <code>Chr1</code>）。</li>
+<li><code>POS</code>：变异起始位置（基于 1 的坐标）。</li>
+<li><code>ID</code>：变异标识符（如 <code>cuteSV.INS.0</code>）。</li>
+<li><code>REF</code>：参考序列碱基。</li>
+<li><code>ALT</code>：替代序列碱基。</li>
+<li><code>QUAL</code>：质量分数（Phred 格式，值越高可信度越高）。</li>
+<li><code>FILTER</code>：过滤标签（<code>PASS</code> 表示通过过滤）。</li>
+<li><code>INFO</code>：变异的附加信息。</li>
+<li><code>FORMAT</code>：样本列的格式定义。</li>
+<li><code>NULL</code>：样本名称（此处样本名为 <code>NULL</code>）。</li>
+</ul>
+</li>
+</ul>
+<h5 id="2-示例数据行"><a href="#2-示例数据行" class="headerlink" title="(2) 示例数据行"></a><strong>(2) 示例数据行</strong></h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Chr1	5194129	cuteSV.INS.0	T	TTGGGGGGGGGGAGAAAGTT...	133.7	PASS	PRECISE;SVTYPE=INS;SVLEN=1827;END=5194129;CIPOS=-287,287;CILEN=-2,2;RE=18;RNAMES=NULL;AF=0.8182	GT:DR:DV:PL:GQ	1/1:4:18:134,18,0:18</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><strong>关键字段解析</strong>：<ul>
+<li><strong><code>#CHROM</code></strong>: <code>Chr1</code>（染色体 1）。</li>
+<li><strong><code>POS</code></strong>: <code>5194129</code>（变异起始位置）。</li>
+<li><strong><code>ID</code></strong>: <code>cuteSV.INS.0</code>（工具生成的唯一标识符）。</li>
+<li><strong><code>REF</code></strong>: <code>T</code>（参考碱基为 T）。</li>
+<li><strong><code>ALT</code></strong>: 插入的序列（插入类型，具体序列在 <code>INFO</code> 中描述）。</li>
+<li><strong><code>QUAL</code></strong>: <code>133.7</code>（高质量变异）。</li>
+<li><strong><code>FILTER</code></strong>: <code>PASS</code>（通过所有过滤条件）。</li>
+<li><strong><code>INFO</code></strong>:<ul>
+<li><code>PRECISE</code>：标记为精确检测的变异。</li>
+<li><code>SVTYPE=INS</code>：变异类型为插入。</li>
+<li><code>SVLEN=1827</code>：插入序列长度为 1827 bp。</li>
+<li><code>END=5194129</code>：变异结束位置（与起始位置相同，表示点插入）。</li>
+<li><code>CIPOS=-287,287</code>：位置置信区间为 [POS-287, POS+287]。</li>
+<li><code>RE=18</code>：支持该变异的测序 reads 数。</li>
+<li><code>AF=0.8182</code>：等位基因频率（81.82% 的 reads 支持变异）。</li>
+</ul>
+</li>
+<li><strong><code>FORMAT</code></strong>: <code>GT:DR:DV:PL:GQ</code>（样本列字段定义）。</li>
+<li><strong>样本数据</strong> <code>1/1:4:18:134,18,0:18</code>:<ul>
+<li><code>GT=1/1</code>：纯合变异（两个等位基因均为变异）。<strong>Genotype，基因型</strong></li>
+<li><code>DR=4</code>：支持参考等位的高质量 reads 数。<strong>（Reference Read Depth，参考等位支持读数）</strong></li>
+<li><code>DV=18</code>：支持变异等位的高质量 reads 数。<strong>（Variant Read Depth，变异等位支持读数）</strong></li>
+<li><code>PL=134,18,0</code>：三种基因型（0/0, 0/1, 1/1）的 Phred 似然值。<strong>（Phred-scaled Genotype Likelihoods，基因型似然值）</strong></li>
+<li><code>GQ=18</code>：基因型质量值。<strong>（Genotype Quality，基因型质量）</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Annotation-VCF"><a href="#Annotation-VCF" class="headerlink" title="Annotation VCF"></a>Annotation VCF</h3><h4 id="数据行例子"><a href="#数据行例子" class="headerlink" title="数据行例子"></a>数据行例子</h4><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Chr	Start	End	Ref	Alt	Func.refGene	Gene.refGene	GeneDetail.refGene	ExonicFunc.refGene	AAChange.refGene	Otherinfo1	Otherinfo2	Otherinfo3	Otherinfo4	Otherinfo5	Otherinfo6	Otherinfo7	Otherinfo8	Otherinfo9	Otherinfo10	Otherinfo11	Otherinfo12	Otherinfo13</span><br><span class="line">Chr1	1358334	1358368	0	0	intergenic	AGIS_Os01g002280,AGIS_Os01g002290	dist=2220;dist=2553	.	.	1	.	20	Chr1	1358334	pbsv.INS.DUP.0	G	&lt;DUP&gt;	.	PASS	SVTYPE=DUP;END=1358368;SVLEN=34	GT:AD:DP:SAC	1/1:0,20:20:0,0,11,9</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><code>GT:AD:DP:SAC</code><ul>
+<li><strong><code>GT</code>（基因型）</strong>：如 <code>0/1</code>（杂合）、<code>1/1</code>（纯合变异）。</li>
+<li><strong><code>AD</code>（等位支持读数）</strong>：如 <code>0,20</code> 表示参考支持 0 条，变异支持 20 条。</li>
+<li><strong><code>DP</code>（总读数深度）</strong>：如 <code>20</code> 表示总支持读数为 20。</li>
+<li><strong><code>SAC</code>（链特异性读数）</strong>：如 <code>0,0,11,9</code> 表示正向参考、反向参考、正向变异、反向变异的读数。</li>
+</ul>
+</li>
+<li><strong>功能筛选</strong>：通过 <code>Func.refGene</code> 和 <code>ExonicFunc.refGene</code> 筛选可能具有功能影响的变异（如 <code>exonic</code> 或 <code>stoploss</code>）。</li>
+<li><strong>长度分析</strong>：统计 <code>SVLEN</code> 分布，比较不同变异类型（INS/DEL/DUP）的长度差异。</li>
+<li><strong>基因关联</strong>：根据 <code>Gene.refGene</code> 关联已知基因功能，优先研究重要基因（如抗病基因）。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Genomics</category>
+      </categories>
+      <tags>
+        <tag>structure variations</tag>
       </tags>
   </entry>
 </search>
